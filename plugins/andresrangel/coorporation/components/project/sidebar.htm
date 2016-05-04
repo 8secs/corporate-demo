@@ -1,0 +1,48 @@
+<div class="col-md-4 project-more">
+    <div class="heading">
+        <h3>{{ 'More'|_ }}</h3>
+    </div>
+
+    <h4>{{ 'Client'|_ }}</h4>
+    <p>{{ project.customer }}</p>
+
+    <h4>{{ 'Categories'|_ }}</h4>
+
+    {% set projectCategories = project.project_categories %}
+    {% set categoryNames = "" %}
+    {% for category in projectCategories %}
+        {% if not loop.last %}
+            {% set categoryNames = categoryNames ~ category.name ~ ', ' %}
+        {% else %}
+            {% set categoryNames = categoryNames ~ category.name %}
+        {% endif %}
+    {% endfor %}
+    <p>{{ categoryNames }}</p>
+
+    <h4>{{ 'Services'|_ }}</h4>
+
+    {% set services = project.services %}
+    {% set serviceNames = "" %}
+    {% for service in services %}
+        {% if not loop.last %}
+            {% set serviceNames = serviceNames ~ service.name ~ ", " %}
+        {% else %}
+            {% set serviceNames = serviceNames ~ service.name %}
+        {% endif %}
+    {% endfor %}
+    <p>{{ serviceNames }}</p>
+
+    <h4>{{ 'Technologies'|_ }}</h4>
+    {% set technologies = project.technologies %}
+    {% set techNames = "" %}
+    {% for tech in technologies %}
+        {% if not loop.last %}
+            {% set techNames = techNames ~ tech.name ~ ", " %}
+        {% else %}
+            {% set techNames = techNames ~ tech.name %}
+        {% endif %}
+    {% endfor %}
+    <p>{{ techNames }}</p>
+    <h4>{{ 'Dates'|_ }}</h4>
+    <p>{{ project.published_at|date('d-m-Y') }}</p>
+</div>

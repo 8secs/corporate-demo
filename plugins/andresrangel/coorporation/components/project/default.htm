@@ -1,0 +1,29 @@
+{% set project = __SELF__.project %}
+
+<section>
+    <div class="project owl-carousel">
+        {% for picture in project.pictures %}
+        <div class="item">
+            <img src="{{ picture.getPath() }}" alt="{{ picture.title }}" class="img-responsive">
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /.project owl-slider -->
+</section>
+
+<section>
+    <div class="row portfolio-project">
+        <div class="col-md-8">
+            <div class="heading">
+                <h3>{{ project.name }}</h3>
+            </div>
+
+            {{ project.description|raw }}
+
+        </div>
+
+        {% partial __SELF__ ~ '::sidebar' %}
+
+    </div>
+</section>
+

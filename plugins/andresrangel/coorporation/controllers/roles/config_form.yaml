@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Role
+
+# Model Form Field configuration
+form: $/andresrangel/coorporation/models/role/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\coorporation\Models\Role
+
+# Default redirect location
+defaultRedirect: andresrangel/coorporation/roles
+
+# Create page
+create:
+    title: andresrangel.coorporation::lang.role.create_title
+    redirect: andresrangel/coorporation/roles/update/:id
+    redirectClose: andresrangel/coorporation/roles
+
+# Update page
+update:
+    title: andresrangel.coorporation::lang.role.update_title
+    redirect: andresrangel/coorporation/roles
+    redirectClose: andresrangel/coorporation/roles
+
+# Preview page
+preview:
+    title: andresrangel.coorporation::lang.role.preview_title

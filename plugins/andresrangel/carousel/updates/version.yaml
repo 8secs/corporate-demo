@@ -1,0 +1,10 @@
+1.0.1: First version of Carousel
+1.0.2:
+  - Create models
+  - create_items_table.php
+  - create_carousels_table.php
+  - create_item_types_table.php
+  - create_slides_table.php
+1.0.3:
+  - Seed Item Types
+  - seed_item_types_table.php

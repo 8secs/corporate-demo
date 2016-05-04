@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Item
+
+# Model Form Field configuration
+form: $/andresrangel/carousel/models/item/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\Carousel\Models\Item
+
+# Default redirect location
+defaultRedirect: andresrangel/carousel/items
+
+# Create page
+create:
+    title: andresrangel.carousel::lang.item.create_title
+    redirect: andresrangel/carousel/items/update/:id
+    redirectClose: andresrangel/carousel/items
+
+# Update page
+update:
+    title: andresrangel.carousel::lang.item.update_title
+    redirect: andresrangel/carousel/items
+    redirectClose: andresrangel/carousel/items
+
+# Preview page
+preview:
+    title: andresrangel.carousel::lang.item.preview_title

@@ -1,0 +1,35 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+project_categories:
+    label: Project Categories
+    view:
+        list: $/andresrangel/coorporation/models/projectcategory/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/andresrangel/coorporation/models/projectcategory/columns.yaml
+        form: $/andresrangel/coorporation/models/projectcategory/fields.yaml
+
+services:
+    label: Services
+    view:
+        list: $/andresrangel/coorporation/models/service/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/andresrangel/coorporation/models/service/columns.yaml
+        form: $/andresrangel/coorporation/models/service/fields.yaml
+technologies:
+    label: Technologies
+    view:
+        list: $/andresrangel/coorporation/models/technology/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/andresrangel/coorporation/models/technology/columns.yaml
+        form: $/andresrangel/coorporation/models/technology/fields.yaml

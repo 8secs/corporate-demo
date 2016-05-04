@@ -1,0 +1,19 @@
+{% for projectCategory in projectCategories %}
+{% set postCount = projectCategory.post_count %}
+
+<li {% if projectCategory.slug == currentCategorySlug %}class="active"{% endif %}>
+    <a href="{{ projectCategory.url }}">{{ projectCategory.name }}</a>
+    {% if postCount %}
+    <span class="badge">{{ postCount }}</span>
+    {% endif %}
+
+    {% if projectCategory.children %}
+    <ul>
+        {% partial __SELF__ ~ "::items"
+        projectCategories=projectCategory.children
+        currentCategorySlug=currentCategorySlug
+        %}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}

@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: andresrangel.coorporation::lang.labels.name
+        searchable: true
+    customer:
+        label: andresrangel.coorporation::lang.labels.customer
+        searchable: true
+    published_at:
+        label: andresrangel.coorporation::lang.labels.published_at
+        type: date
+    updated_at:
+        label: andresrangel.coorporation::lang.labels.updated_at
+        type: date

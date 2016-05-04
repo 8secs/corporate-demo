@@ -1,0 +1,155 @@
+.portfolio{
+  @include make-container();
+  @include make-container-max-widths();
+
+  .isotope {
+    max-width: 100%;
+  }
+}
+
+.portfolio-row {
+  @include make-row();
+}
+
+.portfolio-title{
+
+  margin-bottom: $portfolio-margin-bottom;
+  text-align: center;
+
+  @include media-breakpoint-up(xs){
+    @include make-col-span(12);
+  }
+
+}
+
+.portfolio-filter{
+
+  text-align: center;
+
+  @include media-breakpoint-up(xs){
+    @include make-col-span(12);
+  }
+
+  li{
+    display: inline-block;
+    a{
+      padding: 5px 25px;
+    }
+  }
+
+}
+
+
+.three-col-work {
+
+  .grid-item {
+    min-height: 1px;
+    display: block;
+    padding: 10px;
+
+    @include media-breakpoint-up(xs){
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(sm){
+      width: 50%;
+    }
+
+    @include media-breakpoint-up(lg){
+      width: 33.3%;
+    }
+
+    a {
+      background: $gray;
+      overflow: hidden;
+      display: block;
+      position: relative;
+
+      &:hover {
+
+        img{
+          opacity: 0.2;
+          filter: alpha(opacity=20);
+          transform: scale(1.1);
+        }
+        .work-detail{
+          opacity: 1;
+          bottom: $portfolio-margin-bottom;
+        }
+
+      }
+    }
+
+    img {
+      max-width: 100%;
+      transition: $brand-default-transition;
+    }
+
+    .work-detail{
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      bottom: -$portfolio-margin-bottom;
+      opacity: 0;
+      transition: $brand-default-transition;
+    }
+
+  }
+
+}
+
+.listing-effect{
+
+  &:hover {
+    .listing-effect-title{
+      margin-bottom: 5px;
+    }
+  }
+
+  .listing-effect-title{
+    color: $gray-lightest;
+    font-size: $font-size-base;
+    font-weight: bold;
+    transition: $brand-default-transition;
+  }
+  .listing-meta{color: $gray-lighter;}
+
+  .social-icon{
+    margin-top: 25px;
+    transition: $brand-default-transition;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        margin: 0 3px;
+        i{
+          &.fa {
+            color: $gray-lightest;
+            font-size: $font-size-base * 1.2;
+            height: $portfolio-social-icon-h;
+            width: $portfolio-social-icon-w;
+            padding: 11px 0;
+            &:hover{
+              color: $gray-lightest;
+            }
+            &.fa-facebook:hover{
+              background: $brand-facebook;
+            }
+            &.fa-twitter:hover {
+              background: $brand-twitter;
+            }
+            &.fa-envelope:hover {
+              background: $brand-email;
+            }
+            &.fa-google-plus:hover{
+              background: $brand-google-plus;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

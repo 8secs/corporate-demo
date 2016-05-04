@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Testimonial
+
+# Model Form Field configuration
+form: $/andresrangel/coorporation/models/testimonial/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\coorporation\Models\Testimonial
+
+# Default redirect location
+defaultRedirect: andresrangel/coorporation/testimonials
+
+# Create page
+create:
+    title: andresrangel.coorporation::lang.testimonial.create_title
+    redirect: andresrangel/coorporation/testimonials/update/:id
+    redirectClose: andresrangel/coorporation/testimonials
+
+# Update page
+update:
+    title: andresrangel.coorporation::lang.testimonial.update_title
+    redirect: andresrangel/coorporation/testimonials
+    redirectClose: andresrangel/coorporation/testimonials
+
+# Preview page
+preview:
+    title: andresrangel.coorporation::lang.testimonial.preview_title

@@ -1,0 +1,102 @@
+.round-icon {
+  height: $round-icon-wh;
+  width: $round-icon-wh;
+  border: ($span-hr-height + 1px) solid $brand-sidebar-bg;
+  display: inline-block;
+  position: relative;
+  margin-top: $spacer-y * 1.5;
+  border-radius: 50%;
+
+  @include media-breakpoint-down(sm){
+    margin-top: $spacer-y / 1.1;
+  }
+
+  .menu-icon {
+    background-color: $brand-sidebar-bg;
+    display: inline-block;
+    height: $menu-icon-height;
+    left: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: $spacer;
+
+    &:before, &:after {
+      backface-visibility: hidden;
+      background-color: inherit;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      transform: translateZ(0px);
+      transition: transform 500ms ease 0s;
+      width: 100%;
+    }
+
+    &::before{
+      transform: translateY(-6px) rotate(0deg);
+    }
+
+    &::after {
+      transform: translateY(6px) rotate(0deg);
+    }
+  }
+
+}
+
+.sidebar {
+  background: $brand-sidebar-bg;
+  display: inline-block!important;
+  position: fixed;
+  top: $header-height;
+  left: -$brand-sidebar-width;
+  width: $brand-sidebar-width;
+  height: 100%;
+  z-index: 99;
+
+  @include media-breakpoint-down(sm){
+    top: $header-height-sm + 4px;
+  }
+
+  &.open {
+    left:0;
+  }
+
+  .sidebar-menu {
+    margin-top: $spacer;
+    list-style-type: none;
+
+
+    i{
+      margin-right: 5px;
+    }
+  }
+
+  ul > li.nav-submenu > a:after{
+    background: $brand-sprite-url no-repeat scroll 0 -65px;
+    height: $sidebar-icon-h;
+    width: $sidebar-icon-w;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    right: $sidebar-icon-r;
+    top: $sidebar-icon-t;
+  }
+
+}
+
+.open{
+  .round-icon{
+    .menu-icon{
+      background-color: transparent;
+      &::before {
+        background-color: $brand-sidebar-bg;
+        transform: translateY(0px) rotate(45deg);
+      }
+      &::after{
+        background-color: $brand-sidebar-bg;
+        transform: translateY(0px) rotate(-45deg);
+      }
+    }
+  }
+}

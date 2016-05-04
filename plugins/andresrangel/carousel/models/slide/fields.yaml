@@ -1,0 +1,47 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: andresrangel.carousel::lang.labels.name
+        span: auto
+        type: text
+    published_at:
+        label: andresrangel.carousel::lang.labels.published_at
+        type: datepicker
+        mode: date
+        span: auto
+
+tabs:
+  fields:
+    transition:
+        label: andresrangel.carousel::lang.labels.transition
+        span: auto
+        type: dropdown
+        tab: andresrangel.carousel::lang.labels.data
+    slotamount:
+        label: andresrangel.carousel::lang.labels.slotamount
+        span: auto
+        comment: andresrangel.carousel::lang.labels.slotamount-comment
+        tab: andresrangel.carousel::lang.labels.data
+    masterspeed:
+        label: andresrangel.carousel::lang.labels.masterspeed
+        span: auto
+        tab: andresrangel.carousel::lang.labels.data
+    image:
+        label: andresrangel.carousel::lang.labels.background
+        type: fileupload
+        mode: image
+        span: auto
+        tab: andresrangel.carousel::lang.labels.background
+    items:
+        label: andresrangel.carousel::lang.items.menu_label
+        type: partial
+        path: field_items
+        tab: andresrangel.carousel::lang.items.menu_label
+    carousel:
+        label: andresrangel.carousel::lang.carousels.menu_label
+        type: partial
+        path: field_carousel
+        tab: andresrangel.carousel::lang.carousels.menu_label

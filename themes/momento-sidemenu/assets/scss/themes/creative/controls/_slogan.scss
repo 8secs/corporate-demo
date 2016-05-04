@@ -1,0 +1,50 @@
+.slogan {
+  background: $brand-primary;
+  text-align: center;
+
+  .wrapper {
+    @include make-container();
+    @include make-container-max-widths();
+  }
+
+  .slogan-row{
+    @include make-row();
+  }
+
+  .slogan-content {
+    @include media-breakpoint-up(xs){
+      @include make-col-span(12);
+    }
+  }
+
+  .inner {
+    max-width: $slogan-inner-w;
+    display: inline-block;
+  }
+
+  p {
+    color: $gray-lightest;
+  }
+
+}
+
+.our-story {
+  @include make-container();
+
+}
+
+.story_detail_part {
+  text-align: right;
+  max-width: $slogan-detail-part-w;
+  padding: $slogan-detail-p;
+  float: right;
+}
+
+.story_img_part {
+  background: $slogan-img-url no-repeat scroll center;
+  max-width: 100%;
+  height: $slogan-img-h;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+}

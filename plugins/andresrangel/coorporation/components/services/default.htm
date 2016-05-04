@@ -1,0 +1,14 @@
+{% for params in services %}
+
+<div class="service-item">
+    <div class="services">
+        <div class="service-item">
+            <i class="{{ params.icon }}"></i>
+            <div class="service-desc">
+                <h5>{{ params.name }}</h5>
+                <p>{{ params.description|raw }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,10 @@
+projects:
+    label: Projects
+    view:
+        list: $/andresrangel/coorporation/models/project/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/andresrangel/coorporation/models/project/columns.yaml
+        form: $/andresrangel/coorporation/models/project/fields.yaml

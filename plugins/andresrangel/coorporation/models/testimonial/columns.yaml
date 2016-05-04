@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    source:
+        label: andresrangel.coorporation::lang.labels.source
+    content:
+        label: andresrangel.coorporation::lang.labels.content
+        select: concat(substr(content, 1, 50),"...")
+    published_at:
+        label: andresrangel.coorporation::lang.labels.published_at
+        type: date
+    updated_at:
+        label: andresrangel.coorporation::lang.labels.updated_at
+        type: date

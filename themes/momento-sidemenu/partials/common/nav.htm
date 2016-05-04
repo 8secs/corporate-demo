@@ -1,0 +1,24 @@
+{% import _self as nav %}
+
+{% macro render_menu(items) %}
+{% import _self as nav %}
+
+{% for item in items %}
+{% set itemName = item.title %}
+<li  class="{{ item.items ? 'nav-submenu' : '' }} {{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+    <a href="{{ item.url }}">{{ itemName|_ }}</a>
+
+    {% if item.items %}
+        <ul style="display: none;">{{ nav.render_menu(item.items) }}</ul>
+    {% endif %}
+</li>
+{% endfor %}
+{% endmacro %}
+<nav id="menu-toggle" class="">
+    <a href="#" class="icon-menu link-menu jsc-sidebar-trigger nav-button"><div class="round-icon"> <span class="menu-icon"></span> </div></a>
+</nav>
+<nav id="menu" class="sidebar nav" style="display: block;">
+    <ul class="sidebar-menu">
+        {{ nav.render_menu(mainMenu.menuItems) }}
+    </ul>
+</nav>

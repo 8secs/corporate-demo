@@ -1,0 +1,10 @@
+employees:
+    label: Employees
+    view:
+        list: $/andresrangel/coorporation/models/employee/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/andresrangel/coorporation/models/employee/columns.yaml
+        form: $/andresrangel/coorporation/models/employee/fields.yaml

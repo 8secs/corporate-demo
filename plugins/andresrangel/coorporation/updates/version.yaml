@@ -1,0 +1,16 @@
+1.0.1: First version of coorporation
+1.0.2:
+  - Create models
+  - create_employees_table.php
+  - create_galleries_table.php
+  - create_pivots_table.php
+  - create_projects_table.php
+  - create_project_categories_table.php
+  - create_roles_table.php
+  - create_services_table.php
+  - create_technologies_table.php
+  - create_testimonials_table.php
+  - seed_spain_states_table.php
+1.0.3:
+  - Update Employees table with timestamps
+  - update_employees_table.php

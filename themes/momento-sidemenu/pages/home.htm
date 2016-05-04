@@ -1,0 +1,23 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[ProjectCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+projectCategoryPage = "portfolio/category"
+
+[Projects]
+pageNumber = "{{ :page }}"
+projectsPerPage = 10
+noProjectsMessage = "No projects found"
+sortOrder = "published_at desc"
+projectCategoryPage = "portfolio/category"
+projectPage = "portfolio/project"
+==
+{% partial 'common/carousel' %}
+
+{% partial 'home/slogan-ourstory' %}
+
+{% partial 'home/portfolio' %}

@@ -1,0 +1,153 @@
+body {
+  font-family: $font-family-base;
+  color: $gray;
+}
+
+ul {
+  list-style-type: none;
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+}
+
+nav {
+  display: table;
+  margin-bottom: -$header-height;
+  position: absolute;
+  z-index: 99;
+  transition: $brand-default-transition;
+
+  ul{
+    li{
+      display: list-item;
+    }
+  }
+
+  a{
+    &.icon-menu {
+      background: $brand-primary;
+      display: table;
+      height: $header-height;
+      width: $header-height;
+      text-align: center;
+      @include media-breakpoint-down(sm){
+        height: $header-height-sm + 6px;
+        width: $header-height-sm + 6px;
+
+      }
+    }
+    &:hover {
+      color: $gray-lightest;
+      text-decoration: none;
+    }
+  }
+
+}
+
+a {
+  text-decoration: none;
+  color: $gray;
+  cursor: pointer;
+  transition: $brand-default-transition;
+}
+
+span {
+  &.hr-row{
+    background: $span-hr-color;
+    display: inline-block;
+    height: $span-hr-height;
+    width: $span-hr;
+  }
+}
+
+.search-shop-column {
+  ul{
+    margin-bottom: $spacer;
+    list-style-type: none;
+    padding: 0;
+
+    li{
+      position: relative;
+      a {
+        font-size: $font-size-base;
+        font-weight: $display1-weight * 2;
+        display: inline-block;
+        padding: ($spacer / 2) 0 ($spacer / 2) ($spacer * 2);
+        width: 100%;
+        &:hover {
+          color: $gray-lightest;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.bg-gray {
+  background: $gray-lightest;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.padding-75 {
+  padding: 75px 0;
+}
+
+.padding-45 {
+  padding: 45px 0;
+}
+
+.padding-b {
+  padding-bottom: 75px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.heading {
+  font-size: $font-size-base;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  text-transform: none;
+}
+
+.main_title{
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.without-background {
+  padding-top: 81px;
+
+  header{
+    background: $header-bg-dark;
+
+  }
+}
+
+.heading-part{
+  margin-bottom: $header-title-p * 2;
+  text-align: center;
+  text-transform: none;
+}
+
+.sub-title {
+  font-size: $font-size-base;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.col-sm-margin-b {
+  @include media-breakpoint-down(md){
+    margin-bottom: 30px;
+  }
+}

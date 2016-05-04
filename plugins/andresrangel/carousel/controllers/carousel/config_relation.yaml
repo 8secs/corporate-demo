@@ -1,0 +1,9 @@
+
+slides:
+    label: Slide
+    manage:
+        form: $/andresrangel/carousel/models/slide/fields.yaml
+        list: $/andresrangel/carousel/models/slide/columns.yaml
+    view:
+        list: $/andresrangel/carousel/models/slide/columns.yaml
+        toolbarButtons: create|delete

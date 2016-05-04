@@ -1,0 +1,38 @@
+[Galleries OurStory]
+maxItems = 1
+itemId = 1
+orderBy = "id"
+sort = "desc"
+
+[viewBag]
+==
+<section class="slogan padding-45">
+    <div class="wrapper">
+        <div class="slogan-row">
+            <div class="slogan-content">
+                <div class="inner">
+                    {% content 'home/slogan' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-story bg-gray">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="story_detail_part">
+                {% content 'home/ourstory' %}
+        </div>
+        <div class="col-sm-6 no-padding story_img_part"></div>
+    </div>
+</section>
+
+{% put scripts %}
+<script type="text/javascript">
+    var storyURL = {{ OurStory.gallery.pictures|json_encode|raw }};
+    $(document).ready(function(){
+        $('.story_img_part').css('background', 'url('+storyURL[0].path+') no-repeat scroll center');
+    });
+</script>
+{% endput %}

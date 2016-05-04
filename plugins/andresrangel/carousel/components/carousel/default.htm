@@ -1,0 +1,162 @@
+{% set carousel = __SELF__.carousel %}
+<div class="tp-banner-container">
+    <div class="tp-banner">
+        <ul>  <!-- SLIDE  -->
+
+            {% for slide in carousel.slides %}
+            <li data-transition="{{ slide.transition }}"
+                data-slotamount="{{ slide.slotamount }}"
+                data-masterspeed="{{ slide.masterspeed }}"
+                data-thumb="{{ slide.image.path }}"
+                data-saveperformance="off">
+
+                <!-- MAIN IMAGE -->
+                <img src="{{ slide.image.path }}"
+                     alt="{{ slide.name }}"
+                     data-bgposition="center center"
+                     data-kenburns="on"
+                     data-duration="12000"
+                     data-ease="Power0.easeInOut"
+                     data-bgfit="110"
+                     data-bgfitend="100"
+                     data-bgpositionend="center center">
+
+                {% if slide.items.count > 0 %}
+                {% for item in slide.items %}
+                {% if item.item_type.id == 2 %}
+                    {% set color = item.color|hex2rgb %}
+                    {% set style = "background-color:rgba(" ~ color ~ ", " ~ item.alpha ~ ");width:" ~ item.width ~ "px;height:" ~ item.height ~ "px" %}
+                {% else %}
+                    {% set style = "" %}
+                {% endif %}
+                <div class="tp-caption {{ item.animation }} {{ item.text_format }}"
+                     data-x="{{ item.xpos }}"
+                     data-y="{{ item.ypos }}"
+                     data-hoffset="{{ item.hoffset }}"
+                     data-voffset="{{ item.voffset }}"
+                     data-speed="{{ item.speed }}"
+                     data-start="{{ item.start }}"
+                     data-easing="{{ item.easing }}"
+                     data-splitin="none"
+                     data-splitout="none"
+                     data-elementdelay="{{ item.elementdelay }}"
+                     data-endelementdelay="{{ item.endelementdelay }}"
+                     data-endspeed="{{ item.endspeed }}"
+                     data-endeasing="{{ item.endeasing }}"
+                     style="{{ style }}" >
+
+                    {% if item.item_type.id == 1 %}
+                        {{ item.content|raw }}
+                    {% elseif item.item_type.id == 2 %}
+                        <!-- backgound -->
+                    {% elseif item.item_type.id == 4 %}
+                    <img src="{{ item.image.path }}" width="{{ item.width }}" height="{{ item.height }}" alt="" />
+                    {% elseif item.item_type.id == 3 %}
+                    {% if item.target == 'page-scroll' %}
+                    <a href="{{ item.url }}" target="{{ item.target }}" class="{{ item.target  }} ">{{ item.content|raw }}</a>
+                    {% else %}
+                    <a href="{{ item.url }}" target="{{ item.target }}" >{{ item.content|raw }}</a>
+                    {% endif %}
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% endif %}
+
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</div>
+
+
+
+{% put scripts %}
+<script type="text/javascript">
+
+    //Rs-PLUGIN
+    jQuery(document).ready(function() {
+
+        jQuery('.tp-banner').show().revolution(
+                {
+                    dottedOverlay:"none",
+                    delay:16000,
+                    startwidth:1170,
+                    startheight:670,
+                    hideThumbs:200,
+
+                    thumbWidth:100,
+                    thumbHeight:50,
+                    thumbAmount:5,
+
+                    navigationType:"none",
+                    navigationArrows:"solo",
+                    navigationStyle:"preview4",
+
+                    touchenabled:"on",
+                    onHoverStop:"off",
+
+                    swipe_velocity: 0.7,
+                    swipe_min_touches: 1,
+                    swipe_max_touches: 1,
+                    drag_block_vertical: false,
+                    parallax:"mouse",
+                    parallaxBgFreeze:"on",
+                    parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+
+                    keyboardNavigation:"off",
+
+                    navigationHAlign:"center",
+                    navigationVAlign:"bottom",
+                    navigationHOffset:0,
+                    navigationVOffset:20,
+
+                    soloArrowLeftHalign:"left",
+                    soloArrowLeftValign:"center",
+                    soloArrowLeftHOffset:20,
+                    soloArrowLeftVOffset:0,
+
+                    soloArrowRightHalign:"right",
+                    soloArrowRightValign:"center",
+                    soloArrowRightHOffset:20,
+                    soloArrowRightVOffset:0,
+
+                    shadow:0,
+                    fullWidth:"on",
+                    fullScreen:"off",
+
+                    spinner:"spinner4",
+
+                    stopLoop:"off",
+                    stopAfterLoops:-1,
+                    stopAtSlide:-1,
+
+                    shuffle:"off",
+
+                    autoHeight:"off",
+                    forceFullWidth:"off",
+
+
+
+                    hideThumbsOnMobile:"off",
+                    hideNavDelayOnMobile:1500,
+                    hideBulletsOnMobile:"off",
+                    hideArrowsOnMobile:"off",
+                    hideThumbsUnderResolution:0,
+
+                    hideSliderAtLimit:0,
+                    hideCaptionAtLimit:800,
+                    hideAllCaptionAtLilmit:800,
+                    startWithSlide:0,
+                    videoJsPath:"rs-plugin/videojs/",
+                    fullScreenOffsetContainer: ""
+                });
+
+
+
+
+    });
+
+</script>
+{% endput %}
+

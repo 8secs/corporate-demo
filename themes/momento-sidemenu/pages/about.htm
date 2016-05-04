@@ -1,0 +1,56 @@
+title = "About"
+url = "/about"
+layout = "default"
+description = "Default About template"
+is_hidden = 0
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[Galleries About]
+maxItems = 2
+itemId = 3
+orderBy = "id"
+sort = "desc"
+
+[Services]
+
+[Employees]
+
+[Testimonials]
+==
+<!-- CONTAINER START -->
+  {% partial 'common/header-page' %}
+  <section>
+    {% partial 'about/detail-info' %}
+  </section>
+  <section>
+    {% partial 'about/services' %}
+  </section>
+  <section>
+    <div class="about-detail-container">
+      {% partial 'about/detail-info-2' %}
+      <hr>
+      {% partial 'about/team' %}
+    </div>
+  </section>
+  <section>
+    {% partial 'about/testimonials' %}
+  </section>
+
+{% put scripts %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('body').addClass('without-background nav-lock-scroll');
+    $('.owl-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      center: true,
+      nav: true,
+      dots: true,
+      autoplay: true
+    });
+  });
+</script>
+{% endput %}

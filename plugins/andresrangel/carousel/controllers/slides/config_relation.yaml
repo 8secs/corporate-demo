@@ -1,0 +1,17 @@
+
+items:
+    label: Items
+    manage:
+        form: $/andresrangel/carousel/models/item/fields.yaml
+        list: $/andresrangel/carousel/models/item/columns.yaml
+    view:
+        list: $/andresrangel/carousel/models/item/columns.yaml
+        toolbarButtons: create|delete
+carousel:
+    label: Carousel
+    view:
+        form: $/andresrangel/carousel/models/carousel/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/andresrangel/carousel/models/carousel/fields.yaml
+        list: $/andresrangel/carousel/models/carousel/columns.yaml

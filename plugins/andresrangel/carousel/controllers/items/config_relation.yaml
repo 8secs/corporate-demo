@@ -1,0 +1,9 @@
+
+slide:
+    label: Carousel
+    view:
+        form: $/andresrangel/carousel/models/slide/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/andresrangel/carousel/models/slide/fields.yaml
+        list: $/andresrangel/carousel/models/slide/columns.yaml

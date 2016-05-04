@@ -1,0 +1,10 @@
+roles:
+    label: Roles
+    view:
+        list: $/andresrangel/coorporation/models/role/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/andresrangel/coorporation/models/role/columns.yaml
+        form: $/andresrangel/coorporation/models/role/fields.yaml

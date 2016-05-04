@@ -1,0 +1,8 @@
+{% if __SELF__.projectCategories %}
+<ul class="category-list">
+    {% partial __SELF__ ~ "::items"
+    projectCategories = __SELF__.projectCategories
+    currentCategorySlug = __SELF__.currentCategorySlug
+    %}
+</ul>
+{% endif %}

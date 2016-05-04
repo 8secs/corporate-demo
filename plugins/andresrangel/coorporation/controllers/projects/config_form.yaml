@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Project
+
+# Model Form Field configuration
+form: $/andresrangel/coorporation/models/project/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\coorporation\Models\Project
+
+# Default redirect location
+defaultRedirect: andresrangel/coorporation/projects
+
+# Create page
+create:
+    title: andresrangel.coorporation::lang.project.create_title
+    redirect: andresrangel/coorporation/projects/update/:id
+    redirectClose: andresrangel/coorporation/projects
+
+# Update page
+update:
+    title: andresrangel.coorporation::lang.project.update_title
+    redirect: andresrangel/coorporation/projects
+    redirectClose: andresrangel/coorporation/projects
+
+# Preview page
+preview:
+    title: andresrangel.coorporation::lang.project.preview_title

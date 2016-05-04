@@ -1,0 +1,210 @@
+.about-detail-container{
+  @include make-container();
+  @include make-container-max-widths();
+}
+
+.about-detail-row {
+  @include make-row();
+}
+
+.full-width {
+
+  @include make-col();
+
+  @include media-breakpoint-up(xs){
+    @include make-col-span(12);
+  }
+}
+
+.about-detail {
+
+  @include make-col();
+
+  @include media-breakpoint-up(sm){
+    @include make-col-span(6);
+  }
+
+  .about-title {
+    font-size: $font-size-base * 3;
+    font-weight: 300;
+    color: $gray;
+    line-height: $font-size-base * 4;
+  }
+}
+
+.about-detail-text {
+  @include make-col();
+
+  text-align: left;
+
+  @include media-breakpoint-up(xs){
+    @include make-col-span(12);
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md){
+    @include make-col-span(5);
+  }
+
+
+}
+
+.about-detail-image {
+  @include make-col();
+
+  @include media-breakpoint-up(xs){
+    @include make-col-span(12);
+  }
+
+  @include media-breakpoint-up(md){
+    @include make-col-span(7);
+  }
+}
+
+.services-part {
+  background-color: $gray-lightest;
+
+  .sub-title {
+    color:  $brand-primary;
+  }
+}
+
+
+.service-item {
+  @include make-col();
+
+  @include media-breakpoint-up(xs){
+    @include make-col-span(12);
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(sm){
+    @include make-col-span(6);
+  }
+
+  @include media-breakpoint-up(md){
+    @include make-col-span(3);
+  }
+}
+
+.service-box {
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: $brand-primary;
+    &:hover {
+      color: darken($gray-dark , 10%);
+      .idea-icon {
+        background-position: -14px -55px;
+      }
+      .design-icon {
+        background-position: -74px -55px;
+      }
+      .support-icon {
+        background-position: -134px -55px;
+      }
+      .responsive-design-icon {
+        background-position: -190px -55px;
+      }
+      .sub-title {
+        color: darken($gray-dark , 10%);
+      }
+    }
+  }
+  p {
+    color: $gray-dark;
+  }
+}
+
+.ser-icon {
+  background: $brand-sprite-url no-repeat scroll 0 0;
+  height: $brand-sprite-h * 2;
+  width: $brand-sprite-w * 2 + 6;
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: $brand-default-transition;
+
+  &.idea-icon {
+    background-position: -14px -106px;
+  }
+  &.design-icon {
+    background-position: -74px -106px;
+  }
+  &.support-icon {
+    background-position: -134px -106px;
+  }
+  &.responsive-design-icon {
+    background-position: -190px -106px;
+  }
+}
+
+.team {
+  @include media-breakpoint-down(md){
+    margin: 0 auto;
+    max-width: 572px;
+    text-align: center;
+  }
+}
+
+.team-item-col {
+  @include make-col();
+
+  @include media-breakpoint-up(xs){
+    @include make-col-span(12);
+    margin-bottom: 30px;
+  }
+
+  @include media-breakpoint-up(sm){
+    @include make-col-span(6);
+    margin-bottom: 30px;
+  }
+
+  @include media-breakpoint-up(md){
+    @include make-col-span(3);
+  }
+}
+
+.team-item {
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out 0s;
+
+  @include media-breakpoint-down(sm){
+    display: inline-block;
+  }
+
+  img {
+    max-width: 100%;
+    transition: all 0.4s ease-in-out 0s;
+  }
+
+  .team-item-detail {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: -40px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+  }
+
+  &:hover {
+    background: #6b6b6b;
+    img{
+      opacity: 0.2;
+      transform: scale(1.1);
+    }
+    .team-item-detail {
+      opacity: 1;
+      bottom: 30px;
+    }
+  }
+
+}
+
+.client-detail {
+  text-align: center;
+  .client-title {
+    color: $brand-primary;
+  }
+}

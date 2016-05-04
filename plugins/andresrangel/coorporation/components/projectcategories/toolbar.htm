@@ -1,0 +1,13 @@
+<div class="portfolio-row">
+    <div class="portfolio-filter text-center">
+        <ul class="filter">
+            <li><a data-filter="*">All</a></li>
+            {% set categories = __SELF__.projectCategories %}
+            {% for params in categories %}
+            {% if params.projects.count > 0 %}
+            <li><a href="#filter" data-filter="{{ '.' ~ params.name|lower|replace(' ', '_') }}"> {{ params.name }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

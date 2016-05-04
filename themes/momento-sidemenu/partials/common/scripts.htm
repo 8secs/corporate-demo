@@ -1,0 +1,32 @@
+description = "All javascript theme"
+
+[viewBag]
+==
+<!-- Scripts -->
+<!--<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> Tether for Bootstrap -->
+<script src="{{ [
+    'assets/js/jquery.js',
+    'node_modules/tether/dist/js/tether.min.js',
+    'node_modules/owl.carousel/dist/owl.carousel.min.js',
+    'assets/js/bootstrap.min.js',
+    'assets/js/menu.js',
+    'node_modules/isotope-layout/dist/isotope.pkgd.min.js',
+    'assets/vendor/rs-plugin/js/jquery.themepunch.plugins.min.js',
+    'assets/vendor/rs-plugin/js/jquery.themepunch.revolution.js',
+    'assets/js/app.js'
+]|theme }}"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+
+<script>
+   /* $(window).on('scroll', function(){
+        if( $(window).scrollTop()>670 ){
+            $('.navbar-default').addClass('navbar-fixed-top');
+        } else {
+            $('.navbar-default').removeClass('navbar-fixed-top');
+        }
+    });*/
+</script>
+
+{% framework extras %}
+{% scripts %}

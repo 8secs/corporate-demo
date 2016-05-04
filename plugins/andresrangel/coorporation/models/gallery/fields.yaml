@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: andresrangel.coorporation::lang.labels.name
+        span: auto
+    published_at:
+        label: andresrangel.coorporation::lang.labels.published_at
+        type: datepicker
+        mode: date
+        span: auto
+    description:
+        label: andresrangel.coorporation::lang.labels.description
+        type: richeditor
+        size: huge
+        span: full
+    pictures:
+        label: andresrangel.coorporation::lang.labels.pictures
+        type: fileupload
+        mode: image
+        span: full
+        imageHeight: 260
+        imageWidth: 260

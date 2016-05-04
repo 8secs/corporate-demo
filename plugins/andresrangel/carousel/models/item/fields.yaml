@@ -1,0 +1,136 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: andresrangel.carousel::lang.labels.name
+        span: auto
+        type: text
+        required: true
+    item_type:
+        label: andresrangel.carousel::lang.itemtypes.menu_label
+        type: relation
+        span: auto
+        required: true
+    published_at:
+        label: andresrangel.carousel::lang.labels.published_at
+        type: datepicker
+        mode: date
+        span: auto
+
+
+tabs:
+  fields:
+    animation:
+        label: andresrangel.carousel::lang.labels.animation
+        type: dropdown
+        span: auto
+        tab: andresrangel.carousel::lang.labels.animation
+    xpos:
+        label: andresrangel.carousel::lang.labels.x-position
+        span: auto
+        comment: andresrangel.carousel::lang.labels.x-comment
+        tab: andresrangel.carousel::lang.labels.animation
+    ypos:
+        label: andresrangel.carousel::lang.labels.y-position
+        span: auto
+        comment: andresrangel.carousel::lang.labels.y-comment
+        tab: andresrangel.carousel::lang.labels.animation
+    hoffset:
+        label: andresrangel.carousel::lang.labels.h-offset
+        span: auto
+        comment: andresrangel.carousel::lang.labels.h-offset-comment
+        tab: andresrangel.carousel::lang.labels.animation
+    voffset:
+        label: andresrangel.carousel::lang.labels.v-offset
+        span: auto
+        comment: andresrangel.carousel::lang.labels.v-offset-comment
+        tab: andresrangel.carousel::lang.labels.animation
+    speed:
+        label: andresrangel.carousel::lang.labels.speed
+        span: auto
+        tab: andresrangel.carousel::lang.labels.animation
+    start:
+        label: andresrangel.carousel::lang.labels.start
+        span: auto
+        tab: andresrangel.carousel::lang.labels.animation
+    easing:
+        label: andresrangel.carousel::lang.labels.easing
+        type: dropdown
+        span: auto
+        tab: andresrangel.carousel::lang.labels.animation
+    elementdelay:
+        label: andresrangel.carousel::lang.labels.element-delay
+        span: auto
+        tab: andresrangel.carousel::lang.labels.animation
+    endelementdelay:
+        label: andresrangel.carousel::lang.labels.end-element-delay
+        span: auto
+        tab: andresrangel.carousel::lang.labels.animation
+    endspeed:
+        label: andresrangel.carousel::lang.labels.end-speed
+        span: auto
+        tab: andresrangel.carousel::lang.labels.animation
+    endeasing:
+        label: andresrangel.carousel::lang.labels.end-easing
+        span: auto
+        type: dropdown
+        tab: andresrangel.carousel::lang.labels.animation
+    content:
+        type: richeditor
+        size: huge
+        label: andresrangel.carousel::lang.labels.content
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    text_format:
+        label: andresrangel.carousel::lang.labels.format
+        type: dropdown
+        span: auto
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    image:
+        label: andresrangel.carousel::lang.labels.picture
+        type: fileupload
+        mode: image
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    width:
+        label: andresrangel.carousel::lang.labels.width
+        span: auto
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    height:
+        label: andresrangel.carousel::lang.labels.height
+        span: auto
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    color:
+        label: andresrangel.carousel::lang.labels.color
+        type: colorpicker
+        span: auto
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    alpha:
+        label: andresrangel.carousel::lang.labels.alpha
+        span: auto
+        comment: andresrangel.carousel::lang.labels.alpha-comment
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    url:
+        label: andresrangel.carousel::lang.labels.url
+        span: auto
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    target:
+        label: andresrangel.carousel::lang.labels.target
+        type: dropdown
+        span: auto
+        dependsOn: item_type
+        tab: andresrangel.carousel::lang.labels.data
+    slide:
+        label: andresrangel.carousel::lang.slide.label
+        span: auto
+        type: relation
+        tab: andresrangel.carousel::lang.slides.menu_label
+

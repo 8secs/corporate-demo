@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Project Category
+
+# Model Form Field configuration
+form: $/andresrangel/coorporation/models/projectcategory/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\coorporation\Models\ProjectCategory
+
+# Default redirect location
+defaultRedirect: andresrangel/coorporation/projectcategories
+
+# Create page
+create:
+    title: andresrangel.coorporation::lang.project_category.create_title
+    redirect: andresrangel/coorporation/projectcategories/update/:id
+    redirectClose: andresrangel/coorporation/projectcategories
+
+# Update page
+update:
+    title: andresrangel.coorporation::lang.project_category.update_title
+    redirect: andresrangel/coorporation/projectcategories
+    redirectClose: andresrangel/coorporation/projectcategories
+
+# Preview page
+preview:
+    title: andresrangel.coorporation::lang.project_category.preview_title

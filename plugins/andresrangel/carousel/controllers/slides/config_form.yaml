@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Slide
+
+# Model Form Field configuration
+form: $/andresrangel/carousel/models/slide/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\Carousel\Models\Slide
+
+# Default redirect location
+defaultRedirect: andresrangel/carousel/slides
+
+# Create page
+create:
+    title: Create Slide
+    redirect: andresrangel/carousel/slides/update/:id
+    redirectClose: andresrangel/carousel/slides
+
+# Update page
+update:
+    title: Edit Slide
+    redirect: andresrangel/carousel/slides
+    redirectClose: andresrangel/carousel/slides
+
+# Preview page
+preview:
+    title: Preview Slide

@@ -1,0 +1,11 @@
+{% for params in employees %}
+<div class="col-sm-3 col-xs-6">
+    <div class="team-member text-center">
+        <img class="img-circle center-block" src="{{ params.picture.thumb(200, 200) }}" alt="">
+        <div class="info">
+            {{ params.first_name }} &nbsp; {{ params.last_name }}
+            <p class="text-muted">{{ params.duties }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}

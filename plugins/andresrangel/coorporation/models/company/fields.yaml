@@ -1,0 +1,45 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: andresrangel.coorporation::lang.company.name
+    slogan:
+        label: andresrangel.coorporation::lang.company.slogan
+    contact:
+        type: dropdown
+        label: andresrangel.coorporation::lang.company.contact
+
+tabs:
+  fields:
+      story:
+          type: richeditor
+          size: giant
+          label: andresrangel.coorporation::lang.company.story
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.content
+      logo:
+          label: andresrangel.coorporation::lang.labels.logo
+          type: fileupload
+          mode: image
+          imageHeight: 260
+          imageWidth: 260
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.content
+      facebook:
+          type: text
+          label: andresrangel.coorporation::lang.company.facebook
+          tab: andresrangel.coorporation::lang.company.social
+      googleplus:
+          type: text
+          label: andresrangel.coorporation::lang.company.googleplus
+          tab: andresrangel.coorporation::lang.company.social
+      twitter:
+          type: text
+          label: andresrangel.coorporation::lang.company.twitter
+          tab: andresrangel.coorporation::lang.company.social
+      email:
+          type: text
+          label: andresrangel.coorporation::lang.company.email
+          tab: andresrangel.coorporation::lang.company.social

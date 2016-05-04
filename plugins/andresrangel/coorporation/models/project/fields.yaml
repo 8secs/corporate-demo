@@ -1,0 +1,73 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: andresrangel.coorporation::lang.labels.name
+        span: auto
+    slug:
+        label: andresrangel.coorporation::lang.labels.slug
+        span: right
+        required: true
+        preset:
+            field: name
+            type: slug
+    customer:
+        label: andresrangel.coorporation::lang.labels.customer
+        span: auto
+    url:
+        label: andresrangel.coorporation::lang.labels.url
+        span: auto
+        default: http://
+    published_at:
+        label: andresrangel.coorporation::lang.labels.published_at
+        type: datepicker
+        mode: date
+        span: auto
+
+tabs:
+  fields:
+    description:
+        type: richeditor
+        size: huge
+        label: andresrangel.coorporation::lang.labels.description
+        span: auto
+        tab: andresrangel.coorporation::lang.labels.description
+    picture:
+        label: andresrangel.coorporation::lang.labels.picture
+        type: fileupload
+        mode: image
+        span: auto
+        imageHeight: 260
+        imageWidth: 260
+        tab: andresrangel.coorporation::lang.labels.description
+    services:
+        label: andresrangel.coorporation::lang.services.menu_label
+        type: partial
+        path: fields_project_services
+        tab: andresrangel.coorporation::lang.services.menu_label
+    project_categories:
+        label: andresrangel.coorporation::lang.project_categories.menu_label
+        type: partial
+        path: field_project_categories
+        tab: andresrangel.coorporation::lang.project_categories.menu_label
+    technologies:
+        label: andresrangel.coorporation::lang.technologies.menu_label
+        type: partial
+        path: field_project_technologies
+        tab: andresrangel.coorporation::lang.technologies.menu_label
+    pictures:
+        label: andresrangel.coorporation::lang.labels.pictures
+        type: fileupload
+        mode: image
+        span: auto
+        imageHeight: 260
+        imageWidth: 260
+        tab: andresrangel.coorporation::lang.labels.attachments
+    files:
+        label: andresrangel.coorporation::lang.labels.files
+        type: fileupload
+        mode: file
+        span: auto
+        tab: andresrangel.coorporation::lang.labels.attachments

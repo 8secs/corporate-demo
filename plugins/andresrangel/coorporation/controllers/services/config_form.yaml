@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Service
+
+# Model Form Field configuration
+form: $/andresrangel/coorporation/models/service/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\coorporation\Models\Service
+
+# Default redirect location
+defaultRedirect: andresrangel/coorporation/services
+
+# Create page
+create:
+    title: andresrangel.coorporation::lang.service.create_title
+    redirect: andresrangel/coorporation/services/update/:id
+    redirectClose: andresrangel/coorporation/services
+
+# Update page
+update:
+    title: andresrangel.coorporation::lang.service.update_title
+    redirect: andresrangel/coorporation/services
+    redirectClose: andresrangel/coorporation/services
+
+# Preview page
+preview:
+    title: andresrangel.coorporation::lang.service.preview_title

@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: andresrangel.coorporation::lang.labels.name
+        searchable: true
+    slug:
+        label: andresrangel.coorporation::lang.labels.slug
+        searchable: true
+    published_at:
+        label: andresrangel.coorporation::lang.labels.published_at
+        type: date
+    updated_at:
+        label: andresrangel.coorporation::lang.labels.updated_at
+        type: date

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Technology
+
+# Model Form Field configuration
+form: $/andresrangel/coorporation/models/technology/fields.yaml
+
+# Model Class name
+modelClass: AndresRangel\coorporation\Models\Technology
+
+# Default redirect location
+defaultRedirect: andresrangel/coorporation/technologies
+
+# Create page
+create:
+    title: andresrangel.coorporation::lang.technology.create_title
+    redirect: andresrangel/coorporation/technologies/update/:id
+    redirectClose: andresrangel/coorporation/technologies
+
+# Update page
+update:
+    title: andresrangel.coorporation::lang.technology.update_title
+    redirect: andresrangel/coorporation/technologies
+    redirectClose: andresrangel/coorporation/technologies
+
+# Preview page
+preview:
+    title: andresrangel.coorporation::lang.technology.preview_title

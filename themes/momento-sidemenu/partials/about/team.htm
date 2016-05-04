@@ -1,0 +1,30 @@
+<div class="team padding-75">
+    <div class="about-detail-row">
+        <div class="full-width">
+            <div class="heading-part">
+                <h2 class="about-title">Our Team</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-detail-row">
+        {% for params in employees %}
+        <div class="team-item-col">
+            <div class="team-item listing-effect col-sm-margin-b"> <img class="img-fluid" src="{{ params.picture.path }}" alt="{{ params.first_name }}">
+                <div class="team-item-detail">
+                    <h3 class="sub-title listing-effect-title">{{ params.first_name }} &nbsp; {{ params.last_name }}</h3>
+                    <div class="listing-meta">{{ params.roles[0].name }}</div>
+                    <div class="social-icon">
+                        <ul>
+                            <li><a href="{{ params.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ params.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{ params.google }}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="mailto:{{ params.email }}"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

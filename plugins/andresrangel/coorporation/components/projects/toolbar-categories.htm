@@ -1,0 +1,9 @@
+<div class="btn-toolbar pull-right">
+    <div class="btn-group" id="filters">
+        <a class="btn btn-primary active" href="#filter" class="selected" data-filter="*"><span class="fui-list"></span> All</a>
+        {% set categories = __SELF__.projectCategories %}
+        {% for params in categories %}
+        <a class="btn btn-primary" href="#filter" data-filter="{{ '.' ~ params.name|lower|replace(' ', '_') }}"><span class="fui-eye"></span> {{ params.name }}</a>
+        {% endfor %}
+    </div>
+</div>

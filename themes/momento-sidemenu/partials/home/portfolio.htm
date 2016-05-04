@@ -1,0 +1,41 @@
+<section class="portfolio padding-75">
+    <div class="portfolio-row">
+        <div class="portfolio-title">
+            <h2 class="main_title">Our Creative Work</h2>
+        </div>
+    </div>
+    {% partial 'ProjectCategories::toolbar' %}
+    <div class="grid">
+        <div class="grid">
+            <div class="isotope three-col-work zoom-gallery">
+                {% component 'Projects' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% put scripts %}
+<script type="text/javascript">
+    $(window).load(function() {
+        // init Isotope
+        var $container = $('.isotope').isotope({
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows',
+            getSortData: {
+
+            }
+        });
+
+        // bind filter click
+
+        $('.portfolio-filter').on('click', 'li a', function() {
+            var filterValue = $(this).attr('data-filter');
+            // use filterFn if matches value
+            $container.isotope({
+                filter: filterValue
+            });
+        });
+
+    });
+</script>
+{% endput %}
