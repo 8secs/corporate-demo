@@ -11,7 +11,7 @@
         {% endfor %}
 
         <div class="grid-item listing-effect  {{ categoryNames }}">
-            <a href="{{ params.picture.getPath() }}">
+            <a href="{{ 'works/work'|page({ slug: params.slug }) }}">
                 <img class="img-fluid" src="{{ params.picture.getPath() }}" alt="{{ params.name }}" >
                 <div class="work-detail">
                     <h3 class="listing-effect-title">{{ params.name }}</h3>

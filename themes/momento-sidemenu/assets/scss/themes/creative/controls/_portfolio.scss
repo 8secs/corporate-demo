@@ -39,6 +39,28 @@
 
 }
 
+.portfolio-content {
+  @include make-col();
+
+  padding: 10px;
+
+  @include media-breakpoint-up(md){
+    @include make-col-span(8);
+  }
+
+}
+
+.portfolio-sidebar {
+  @include make-col();
+
+  padding: 10px;
+  text-align: right;
+
+  @include media-breakpoint-up(md){
+    @include make-col-span(4);
+  }
+}
+
 
 .three-col-work {
 

@@ -9519,6 +9519,29 @@ header {
     .portfolio-filter li a {
       padding: 5px 25px; }
 
+.portfolio-content {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 10px; }
+  @media (min-width: 768px) {
+    .portfolio-content {
+      width: 66.66667%; } }
+
+.portfolio-sidebar {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding: 10px;
+  text-align: right; }
+  @media (min-width: 768px) {
+    .portfolio-sidebar {
+      width: 33.33333%; } }
+
 .three-col-work .grid-item {
   min-height: 1px;
   display: block;
@@ -9699,6 +9722,9 @@ ol.breadcrumb {
   list-style: none;
   background-color: transparent;
   border-radius: 0; }
+  ol.breadcrumb a:hover {
+    text-decoration: none;
+    color: #dcbd71; }
   ol.breadcrumb a:after {
     content: "/";
     padding-left: 10px;

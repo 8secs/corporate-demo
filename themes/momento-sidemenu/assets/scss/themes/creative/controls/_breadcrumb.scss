@@ -7,6 +7,10 @@ ol.breadcrumb {
   border-radius: 0;
 
   a {
+    &:hover {
+      text-decoration: none;
+      color: $brand-primary;
+    }
     &:after {
       content: "/";
       padding-left: 10px;
