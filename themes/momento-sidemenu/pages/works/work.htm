@@ -1,0 +1,26 @@
+title = "work"
+url = "/works/work/:slug"
+layout = "default"
+description = "Work Detail Page"
+is_hidden = 0
+child_of = "works/works"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[Projects]
+pageNumber = "{{ :page }}"
+projectsPerPage = 10
+noProjectsMessage = "No projects found"
+sortOrder = "published_at desc"
+projectCategoryPage = "works/project-categories"
+projectPage = "works/work"
+
+[Project]
+maxItems = 20
+slug = "{{ :slug }}"
+projectCategoryPage = "works/project-categories"
+orderBy = "id"
+sort = "desc"
+==
+{% component 'Projects' %}

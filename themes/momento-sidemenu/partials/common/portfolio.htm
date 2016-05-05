@@ -1,18 +1,11 @@
-<section class="portfolio padding-75">
-    <div class="portfolio-row">
-        <div class="portfolio-title">
-            <h2 class="main_title">Our Creative Work</h2>
-        </div>
-    </div>
-    {% partial 'ProjectCategories::toolbar' %}
+{% partial 'ProjectCategories::toolbar' %}
+<div class="grid">
     <div class="grid">
-        <div class="grid">
-            <div class="isotope three-col-work zoom-gallery">
-                {% component 'Projects' %}
-            </div>
+        <div class="isotope {{ class }}">
+            {% component 'Projects' %}
         </div>
     </div>
-</section>
+</div>
 
 {% put scripts %}
 <script type="text/javascript">

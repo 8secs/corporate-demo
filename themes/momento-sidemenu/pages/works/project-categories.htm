@@ -1,0 +1,24 @@
+title = "Project Categories"
+url = "/works/project-categories/:slug"
+layout = "default"
+is_hidden = 0
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[Projects]
+pageNumber = "{{ :page }}"
+projectCategoryFilter = "{{ :slug }}"
+projectsPerPage = 10
+noProjectsMessage = "No projects found"
+sortOrder = "published_at desc"
+projectCategoryPage = "works/project-categories"
+projectPage = "works/work"
+
+[ProjectCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+projectCategoryPage = "works/project-categories"
+==
+{% component 'Projects' %}

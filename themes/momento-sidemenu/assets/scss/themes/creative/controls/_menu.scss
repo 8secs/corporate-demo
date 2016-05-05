@@ -64,8 +64,18 @@
 
   .sidebar-menu {
     margin-top: $spacer;
+    padding-left: 0;
     list-style-type: none;
 
+    li {
+      a {
+        font-size: $font-size-base;
+        font-weight: 600;
+        display: inline-block;
+        padding: 5px 0 5px 30px;
+        width: 100%;
+      }
+    }
 
     i{
       margin-right: 5px;

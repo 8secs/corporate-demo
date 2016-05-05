@@ -1,0 +1,37 @@
+title = "Works"
+url = "/works"
+layout = "default"
+description = "Lists of works"
+is_hidden = 0
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[Projects]
+pageNumber = "{{ :page }}"
+projectsPerPage = 10
+noProjectsMessage = "No projects found"
+sortOrder = "published_at desc"
+projectCategoryPage = "works/project-categories"
+projectPage = "works/work"
+
+[ProjectCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+projectCategoryPage = "works/project-categories"
+==
+<div class="padding-b">
+{% partial 'common/header-page' page='works' %}
+
+{% partial 'common/portfolio' class=" four-col-work work-no-spacing zoom-gallery" %}
+</div>
+
+
+{% put scripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('body').addClass('without-background nav-lock-scroll');
+    });
+</script>
+{% endput %}

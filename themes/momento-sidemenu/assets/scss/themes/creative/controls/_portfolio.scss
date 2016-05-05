@@ -76,7 +76,6 @@
           opacity: 1;
           bottom: $portfolio-margin-bottom;
         }
-
       }
     }
 
@@ -93,9 +92,64 @@
       opacity: 0;
       transition: $brand-default-transition;
     }
-
   }
+}
 
+.four-col-work {
+
+  .grid-item {
+    padding: 0;
+
+    @include media-breakpoint-up(xs){
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(sm){
+      width: 50%;
+    }
+
+    @include media-breakpoint-up(md){
+      width: 33.33%;
+    }
+
+    @include media-breakpoint-up(lg){
+      width: 25%;
+    }
+
+    a {
+      background: $gray;
+      overflow: hidden;
+      display: block;
+      position: relative;
+
+      &:hover {
+
+        img{
+          opacity: 0.2;
+          filter: alpha(opacity=20);
+          transform: scale(1.1);
+        }
+        .work-detail{
+          opacity: 1;
+          bottom: $portfolio-margin-bottom;
+        }
+      }
+    }
+
+    img {
+      max-width: 100%;
+      transition: $brand-default-transition;
+    }
+
+    .work-detail{
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      bottom: -$portfolio-margin-bottom;
+      opacity: 0;
+      transition: $brand-default-transition;
+    }
+  }
 }
 
 .listing-effect{

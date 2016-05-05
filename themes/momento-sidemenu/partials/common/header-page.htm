@@ -3,12 +3,15 @@
         <div class="header-page-title-col">
             <div class="padding-b">
                 <div class="heading-part mt-40">
-                    <h1 class="">Get to Know About Minimo</h1>
-                    <p>That it might be the mirror of my soul, as my soul is the mirror of the infinite God!</p>
+                    {% if page == 'about' %}
+                        {% content 'about/title' %}
+                    {% elseif page == 'works' %}
+                        {% content 'works/title' %}
+                    {% endif %}
                     {% partial 'common/breadcrumb' %}
                 </div>
                 <hr>
             </div>
         </div>
     </div>
-</div>
+</div>  

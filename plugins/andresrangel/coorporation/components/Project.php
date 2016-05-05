@@ -91,7 +91,7 @@ class Project extends ComponentBase
             }
 
             $related = ProjectModel::with('picture')
-                ->whereHas('categories',
+                ->whereHas('project_categories',
                     function($query) use ($cat_ids){
                         $query->whereIn('id', $cat_ids);
                     })

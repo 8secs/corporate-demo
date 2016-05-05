@@ -1,10 +1,11 @@
-title = "About"
+title = "About Us"
 url = "/about"
 layout = "default"
-description = "Default About template"
+description = "All info about company!"
 is_hidden = 0
 child_of = "home"
 hide_crumb = 0
+crumb_title = "About"
 remove_crumb_trail = 0
 crumb_disabled = 0
 
@@ -21,7 +22,7 @@ sort = "desc"
 [Testimonials]
 ==
 <!-- CONTAINER START -->
-  {% partial 'common/header-page' %}
+  {% partial 'common/header-page' page='about' %}
   <section>
     {% partial 'about/detail-info' %}
   </section>

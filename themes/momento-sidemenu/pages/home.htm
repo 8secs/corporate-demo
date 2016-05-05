@@ -20,4 +20,12 @@ projectPage = "portfolio/project"
 
 {% partial 'home/slogan-ourstory' %}
 
-{% partial 'home/portfolio' %}
+
+<section class="portfolio padding-75">
+    <div class="portfolio-row">
+        <div class="portfolio-title">
+            <h2 class="main_title">Our Creative Work</h2>
+        </div>
+    </div>
+    {% partial 'common/portfolio' class="three-col-work zoom-gallery" %}
+</section>
