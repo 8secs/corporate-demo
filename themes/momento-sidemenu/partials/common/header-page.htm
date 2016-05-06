@@ -9,6 +9,8 @@
                         {% content 'works/title' %}
                     {% elseif page == 'work' %}
                         <h1 class="">{{ Project.project.name }}</h1>
+                    {% elseif page == 'news' %}
+                        {% content 'news/title' %}
                     {% endif %}
                     {% partial 'common/breadcrumb' %}
                 </div>

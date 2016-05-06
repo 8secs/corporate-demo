@@ -1,0 +1,42 @@
+[viewBag]
+
+[blogTags]
+results = 5
+direction = "desc"
+
+[searchForm]
+resultPage = "news/search-results"
+categoryFilter = 0
+==
+<div class="sidebar-block">
+    <div class="sidebar-widget">
+        <div class="sidebar-title">
+            <h4>{{ 'Search'|_ }}</h4>
+        </div>
+        <hr>
+        <form class="form-inline" method="GET" action="{{ searchForm.resultPage|page }}">
+            <div class="form-group">
+                <input type="text" name="search" class="form-control" placeholder="{{ 'Search term'|_ }}">
+            </div>
+            <button class="search-btn btn" type="submit">{{ 'Search'|_ }}</button>
+        </form>
+    </div>
+    <div class="sidebar-widget">
+        <div class="sidebar-title">
+            <h4>{{ 'Categories'|_ }}</h4>
+        </div>
+        <hr>
+        {% partial 'news/categories' %}
+    </div>
+    <div class="sidebar-widget">
+        <div class="sidebar-title">
+            <h4>{{ 'Tags'|_ }}</h4>
+        </div>
+        <hr>
+        <ul class="tagcloud">
+            {% for tag in blogTags.tags %}
+            <li><a href="#"> {{ tag.name }} ({{ tag.posts|length }})</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -28,10 +28,4 @@ projectCategoryPage = "works/project-categories"
 </div>
 
 
-{% put scripts %}
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('body').addClass('without-background nav-lock-scroll');
-    });
-</script>
-{% endput %}
+{% partial 'common/body-class-script' %}

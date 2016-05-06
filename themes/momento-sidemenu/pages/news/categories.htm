@@ -1,0 +1,42 @@
+title = "Categories"
+url = "/categories/:slug"
+layout = "default"
+description = "News Categories List"
+is_hidden = 0
+child_of = "news/news"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+==
+
+<div class="news-container">
+    <div class="padding-75">
+        <div class="news-row">
+            {% partial 'common/header-page' page="news" %}
+        </div>
+        <div class="news-row">
+            <div class="news-content">
+                {% partial 'news/posts' %}
+            </div>
+            <div class="news-sidebar">
+                {% partial 'news/sidebar' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% partial 'common/body-class-script' %}

@@ -109,6 +109,38 @@ sort = "desc"
         </div>
 
     </div>
+
+    <div class="portfolio-row">
+        <div class="portfolio-title">
+            <div class="heading">
+                <h3>{{ 'Related projects'|_ }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-row">
+        {% for related in relatedProjects %}
+        {% set item = related[0] %}
+        <div class="portfolio-related">
+            <div class="box-image">
+                <div class="image">
+                    <img src="{{ related.picture.getPath() }}" alt="{{ related.name }}" class="img-fluid">
+                </div>
+                <div class="bg"></div>
+                <div class="name">
+                    <h3><a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}">{{ related.name }}</a></h3>
+                </div>
+                <div class="text">
+                    <p class="buttons">
+                        <a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}" class="btn btn-template-transparent-primary">{{ 'View'|_ }}</a>
+                        <a href="{{ related.url }}" class="btn btn-template-transparent-primary" target="_blank">{{ 'Website'|_ }}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 </section>
 
 
