@@ -1,6 +1,10 @@
 [viewBag]
 ==
-{% set posts = blogPosts.posts %}
+
+{% if searchTerm %}
+<h2>{{ 'Search Results for:'|_ }} <strong>{{ searchTerm }}</strong></h2>
+<hr>
+{% endif %}
 
 <div class="blog-content">
     {% for post in posts %}
@@ -33,7 +37,8 @@
                         <li>
                             <i class="fa fa-tag"></i>
                             {% for tag in post.tags %}
-                            <a href="{{ tag.name }}">{{ tag.name }}</a>{% if not loop.last %} , {% endif %}
+                            {% set url = 'news/tag-search/' ~ tag.name %}
+                            <a href="{{ url|app }}">{{ tag.name }}</a>{% if not loop.last %} , {% endif %}
                             {% endfor %}
                         </li>
                         {% endif %}

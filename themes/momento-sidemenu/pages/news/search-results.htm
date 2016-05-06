@@ -16,6 +16,9 @@ sortOrder = "published_at desc"
 categoryPage = "news/categories"
 postPage = "news/post"
 ==
+
+{% set posts = searchResult.posts %}
+
 <div class="news-container">
     <div class="padding-75">
         <div class="news-row">
@@ -23,7 +26,7 @@ postPage = "news/post"
         </div>
         <div class="news-row">
             <div class="news-content">
-                {% partial 'news/search-post' %}
+                {% partial 'news/posts' posts=posts searchTerm=searchResult.searchTerm %}
             </div>
             <div class="news-sidebar">
                 {% partial 'news/sidebar' %}

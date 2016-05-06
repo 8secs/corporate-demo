@@ -35,7 +35,8 @@ categoryFilter = 0
         <hr>
         <ul class="tagcloud">
             {% for tag in blogTags.tags %}
-            <li><a href="#"> {{ tag.name }} ({{ tag.posts|length }})</a></li>
+            {% set url = 'news/tag-search/' ~ tag.name %}
+            <li><a href="{{ url|app }} "> {{ tag.name }} ({{ tag.posts|length }})</a></li>
             {% endfor %}
         </ul>
     </div>
