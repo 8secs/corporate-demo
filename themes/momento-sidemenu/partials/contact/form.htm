@@ -1,0 +1,33 @@
+{% if success %}
+<div class="form-group contact-form-full">
+    <div id='mail_success' class='success'>{% content 'contact/success' %}</div><!-- success message -->
+</div>
+
+{% else %}
+
+{{ form_ajax('onSubmit', {
+class: 'contact-form',
+update: {'contact/form' : '#partialContactForm' }
+}) }}
+
+
+
+<div class="form-group contact-form-half">
+    <input id="name" type="text" name="name" class="form-control" placeholder="name" />
+</div>
+<div class="form-group contact-form-half">
+    <input id="email" type="text" name="email" class="form-control" placeholder="email" />
+</div>
+<div class="form-group contact-form-full">
+    <textarea id="message" class="form-control" name="comments" rows="3" placeholder="message" ></textarea>
+</div>
+<div class="form-group contact-form-full" id='submit'>
+    <button type="submit" id='send_message' class="btn  btn-lg costom-btn"><i class="fa fa-envelope"></i>Enviar</button>
+</div>
+
+
+
+
+{{ form_close() }}
+
+{% endif %}

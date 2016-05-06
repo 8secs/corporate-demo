@@ -3,14 +3,10 @@
         <div class="header-page-title-col">
             <div class="padding-b">
                 <div class="heading-part mt-40">
-                    {% if page == 'about' %}
-                        {% content 'about/title' %}
-                    {% elseif page == 'works' %}
-                        {% content 'works/title' %}
-                    {% elseif page == 'work' %}
+                    {% if page != 'work' %}
+                        {% content page ~ '/title' %}
+                    {% else %}
                         <h1 class="">{{ Project.project.name }}</h1>
-                    {% elseif page == 'news' %}
-                        {% content 'news/title' %}
                     {% endif %}
                     {% partial 'common/breadcrumb' %}
                 </div>

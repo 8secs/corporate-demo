@@ -1,5 +1,6 @@
-@import "about";
-@import "news";
+@import 'about';
+@import 'news';
+@import 'contact';
 
 .header-page-container {
   @include make-container();

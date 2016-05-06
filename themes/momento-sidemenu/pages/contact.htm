@@ -1,0 +1,54 @@
+title = "Contact"
+url = "/contact"
+layout = "default"
+is_hidden = 0
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[GoogleMapsEmbed]
+q = "Urbanizacion El Jardin, 1, 41807 Espartinas, Sevilla"
+mapType = "roadmap"
+width = 1920
+height = 250
+responsive = "16by9"
+==
+<div class="padding-b">
+    {% partial 'common/header-page' page='contact' %}
+    <section>
+        <div class="map">
+            {% component 'GoogleMapsEmbed' %}
+        </div>
+    </section>
+    <section>
+        <div class="contact-container padding-75 text-center">
+
+            {% partial 'contact/info' %}
+
+        </div>
+    </section>
+
+    <section class="pading_b">
+
+        <div class="contact-container main-form">
+
+            <div class="heading-part">
+
+                <h2 class="main_title mt-30 mb-30">Leave a message!</h2>
+
+            </div>
+
+            <div class="contact-row">
+
+                {% partial 'contact/form' %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+{% partial 'common/body-class-script' %}
