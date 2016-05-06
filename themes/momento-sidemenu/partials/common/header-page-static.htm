@@ -1,0 +1,17 @@
+<div class="header-page-container">
+    <div class="header-page-row">
+        <div class="header-page-title-col">
+            <div class="padding-b">
+                <div class="heading-part mt-40">
+                    {% if page != 'work' %}
+                    {% content page ~ '/title' %}
+                    {% else %}
+                    <h1 class="">{{ Project.project.name }}</h1>
+                    {% endif %}
+                    {% partial 'common/breadcrumb' %}
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

@@ -40,6 +40,19 @@ class Plugin extends PluginBase
     }
 
     /**
+     * Register snippets with the RainLab.Pages plugin.
+     *
+     * @return array
+     * @see https://octobercms.com/plugin/rainlab-pages
+     */
+    public function registerPageSnippets()
+    {
+        return [
+            '\AndresRangel\Carousel\Components\Carousel' => 'Carousel'
+        ];
+    }
+
+    /**
      * Registers any back-end permissions used by this plugin.
      *
      * @return array

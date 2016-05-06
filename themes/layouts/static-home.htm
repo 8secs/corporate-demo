@@ -1,0 +1,37 @@
+description = "Working with static pages"
+
+[staticPage]
+
+[staticMenu mainMenu]
+code = "main-menu-static-pages"
+
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+
+<header>
+    {% partial 'common/header-area' %}
+</header>
+
+<section id="content">
+    {% page %}
+</section>
+
+<footer class="footer">
+    {% partial 'common/footer' %}
+</footer>
+
+<div id="copyright">
+
+
+</div>
+{% partial 'common/scripts' %}
+
+</body>
+</html>

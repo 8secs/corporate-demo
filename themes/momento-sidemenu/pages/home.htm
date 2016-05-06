@@ -3,29 +3,10 @@ url = "/"
 layout = "default"
 is_hidden = 0
 
-[ProjectCategories]
-slug = "{{ :slug }}"
-displayEmpty = 0
-projectCategoryPage = "portfolio/category"
-
-[Projects]
-pageNumber = "{{ :page }}"
-projectsPerPage = 10
-noProjectsMessage = "No projects found"
-sortOrder = "published_at desc"
-projectCategoryPage = "portfolio/category"
-projectPage = "portfolio/project"
 ==
 {% partial 'common/carousel' %}
 
 {% partial 'home/slogan-ourstory' %}
 
 
-<section class="portfolio padding-75">
-    <div class="portfolio-row">
-        <div class="portfolio-title">
-            <h2 class="main_title">Our Creative Work</h2>
-        </div>
-    </div>
-    {% partial 'common/portfolio' class="three-col-work zoom-gallery" %}
-</section>
+{% partial 'home/portfolio' %}

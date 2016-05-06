@@ -1,0 +1,40 @@
+description = "Working with static pages"
+
+[staticPage]
+
+[staticBreadcrumbs]
+
+[staticMenu mainMenu]
+code = "main-menu-static-pages"
+
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+{variable tab="Header" type="text" name="tagline" label="Tagline"}{/variable}
+{variable tab="Header" type="mediafinder" mode="image" name="banner" label="Banner image"}{/variable}
+<header>
+    {% partial 'common/header-area' %}
+</header>
+
+<section id="content">
+    {% page %}
+</section>
+
+<footer class="footer">
+    {% partial 'common/footer' %}
+</footer>
+
+<div id="copyright">
+
+
+</div>
+{% partial 'common/scripts' %}
+
+</body>
+</html>
