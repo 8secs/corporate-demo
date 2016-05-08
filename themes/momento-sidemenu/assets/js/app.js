@@ -12,6 +12,11 @@ $(document).ready(function(){
 
 });
 
+$(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+});
+
 $(window).scroll(function() {
     if ($(this).scrollTop() > 1){
         $('header').addClass("sticky");

@@ -15,7 +15,7 @@
   }
 
   > .no-padding{
-    border-right: 1px solid #e1e1e1;
+    border-right: 1px solid $gray-lightest;
     &:last-child {
       border: none;
     }
@@ -30,8 +30,8 @@
   }
 
   textarea {
-    background: #f6f6f6;
-    padding: 8px 15px;
+    background: $gray-lightest;
+    padding: $spacer/2 $spacer;
     width: 100%;
     border: none;
   }
@@ -44,8 +44,8 @@
     @include make-col-span(6);
   }
   input {
-    background: #f6f6f6;
-    padding: 8px 15px;
+    background: $gray-lightest;
+    padding: $spacer/2 $spacer;
     width: 100%;
     border: none;
   }
@@ -59,10 +59,10 @@
 .contact-box {
   span {
     display: inline-block;
-    font-size: 15px;
-    color: #1f1f1f;
+    font-size: $font-size-base;
+    color: $gray-dark;
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: $spacer;
     width: 100%;
   }
   text-align: center;

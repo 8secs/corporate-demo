@@ -3,7 +3,7 @@ description = "Default layout"
 [staticPage]
 
 [staticMenu mainMenu]
-code = "main-menu-static-pages"
+code = "main-menu"
 
 [staticBreadcrumbs]
 
@@ -22,6 +22,7 @@ disabled-class = "disabled"
 </head>
 <body>
 
+{% partial 'common/preloader' %}
 <header>
     {% partial 'common/header-area' %}
 </header>

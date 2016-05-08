@@ -1,9 +1,4 @@
 {% set company = __SELF__.company %}
 <p><strong>{{ company.name }}</strong>
-    <br>{{ company.address }}
-    <br>{{ company.cp }} {{ company.state }}
-    <br>{{ company.city }}
-    <br>{{ company.country }}
-    <br>
-    <strong>{{ company.country }}</strong>
+    <br>{{ company.address }} <br>{{ company.cp }} {{ company.state }}<br> {{ company.city }}, {{ company.country }}
 </p>

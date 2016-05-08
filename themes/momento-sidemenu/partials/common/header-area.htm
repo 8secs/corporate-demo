@@ -6,8 +6,13 @@
     </div>
     <div class="search-shop-column text-right">
         <ul class="nav pull-right">
-            <li class="search"><a><span></span></a></li>
-            <li class="shop"><a><span></span></a></li>
+            <!--<li class="search"><a><span></span></a></li>
+            <li class="shop"><a><span></span></a></li>-->
+            {% if user %}
+                <li class="logout"><a href="#" data-request="onLogout"><i class="fa fa-sign-out fa-2x"></i> </a></li>
+            {% else %}
+                <li class="login"><a href="{{ 'account'|page }}"><i class="fa fa-sign-in fa-2x"></i> </a></li>
+            {% endif %}
         </ul>
     </div>
 </div>

@@ -38,9 +38,35 @@
   display: inline-block;
   ul{
     margin-bottom: 0;
+    padding: 0;
     li{
       display: inline-block;
       margin: 0 3px;
+      i.fa {
+        background-color: transparent;
+        height: 48px;
+        width: 48px;
+        text-align: center;
+        font-size: 24px;
+        padding: 13px 0; /*transition: all 0.4s ease 0s;*/
+        border-radius: 50px;
+        transition: all 0.4s ease-in-out 0s;
+        &:hover{
+          color: $gray-lightest;
+        }
+        &.fa-facebook:hover{
+          background: $brand-facebook;
+        }
+        &.fa-twitter:hover {
+          background: $brand-twitter;
+        }
+        &.fa-google-plus:hover {
+          background: $brand-google-plus;
+        }
+        &.fa-envelope:hover {
+          background: $brand-email;
+        }
+      }
     }
   }
 }
@@ -48,7 +74,16 @@
 .footer-link {
   display: inline-block;
   margin-top: $spacer * 2.5;
-  li{
-    display: inline-block;
+  ul {
+    li{
+      display: inline-block;
+      a{
+        padding: 0 20px;
+        &:hover {
+          color: $brand-primary;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }

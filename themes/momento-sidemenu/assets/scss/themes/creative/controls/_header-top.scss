@@ -83,7 +83,8 @@ header {
     > li {
       display: inline-block;
       > a {
-        padding: $brand-sprite-p;
+        padding: $brand-sprite-p-sm;
+        color: $gray-lightest;
         display: block;
         border-left: $header-border-button;
         @include media-breakpoint-down(sm){

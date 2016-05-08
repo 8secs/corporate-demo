@@ -5,7 +5,7 @@ description = "Contact Static Layout"
 [staticBreadcrumbs]
 
 [staticMenu mainMenu]
-code = "main-menu-static-pages"
+code = "main-menu"
 
 [session]
 security = "all"
@@ -20,6 +20,7 @@ security = "all"
 {variable tab="Header" type="text" name="longtitle" label="Long Title"}{/variable}
 {variable tab="Header" type="text" name="tagline" label="Tagline"}{/variable}
 
+{% partial 'common/preloader' %}
 <header>
     {% partial 'common/header-area' %}
 </header>
@@ -51,12 +52,13 @@ security = "all"
     </div>
 </section>
 
+{% partial 'common/body-class-script' %}
+
 <footer class="footer">
     {% partial 'common/footer' %}
 </footer>
 
 <div id="copyright">
-
 
 </div>
 

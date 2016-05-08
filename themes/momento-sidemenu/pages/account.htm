@@ -1,0 +1,26 @@
+title = "Account"
+url = "/account"
+layout = "default"
+is_hidden = 0
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[account]
+paramCode = "code"
+==
+
+<div class="padding-b">
+    {% partial 'common/header-page' page='account' %}
+    <div class="account-container">
+        <div class="account-row">
+            <div class="account-col">
+                {% component 'account' %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% partial 'common/body-class-script' %}
