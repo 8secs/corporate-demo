@@ -1,0 +1,7 @@
+{% set company = __SELF__.company %}
+<div class="social">
+    <a href="{{ company.facebook }}" class="external facebook" data-animate-hover="pulse" style="opacity: 1;"><i class="fa fa-facebook"></i></a>
+    <a href="{{ company.googleplus }}" class="external gplus" data-animate-hover="pulse" style="opacity: 1;"><i class="fa fa-google-plus"></i></a>
+    <a href="{{ company.twitter }}" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+    <a href="mailto:{{ company.email }}" class="email" data-animate-hover="pulse" style="opacity: 1;"><i class="fa fa-envelope"></i></a>
+</div>

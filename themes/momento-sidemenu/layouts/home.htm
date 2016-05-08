@@ -1,0 +1,77 @@
+description = "Working with static pages"
+
+[staticPage]
+
+[staticMenu mainMenu]
+code = "main-menu-static-pages"
+
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+{variable tab="Header" type="mediafinder" mode="image" name="banner" label="Banner image"}{/variable}
+<header>
+    {% partial 'common/header-area' %}
+</header>
+
+<section id="content">
+    {% page %}
+</section>
+
+<section class="slogan padding-45">
+    <div class="wrapper">
+        <div class="slogan-row">
+            <div class="slogan-content">
+                <div class="inner">
+                    {% placeholder slogan title="Slogan" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-story bg-gray">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="story_detail_part">
+                {% placeholder story title="Our Story" %}
+            </div>
+        </div>
+        <div class="col-sm-6 no-padding story_img_part"></div>
+    </div>
+</section>
+
+<section class="portfolio padding-75">
+    <div class="portfolio-row">
+        <div class="portfolio-title">
+            <h2 class="main_title">{{ 'Our Creative Work'|_ }}</h2>
+        </div>
+    </div>
+    {% placeholder portfolio title="Portfolio" %}
+</section>
+
+<footer class="footer">
+    {% partial 'common/footer' %}
+</footer>
+
+<div id="copyright">
+
+
+</div>
+{% put scripts %}
+<script type="text/javascript">
+    var storyURL = '{{ banner|media }}';
+    $(document).ready(function(){
+        $('.story_img_part').css('background', 'url('+storyURL+') no-repeat scroll center');
+    });
+</script>
+{% endput %}
+{% partial 'common/scripts' %}
+
+</body>
+</html>

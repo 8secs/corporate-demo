@@ -177,6 +177,19 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Register snippets with the RainLab.Pages plugin.
+     *
+     * @return array
+     * @see https://octobercms.com/plugin/rainlab-pages
+     */
+    public function registerPageSnippets()
+    {
+        return [
+            //'AndresRangel\Coorporation\Components\Projects'                => 'Projects',
+        ];
+    }
+
     public function registerSettings()
     {
         return [

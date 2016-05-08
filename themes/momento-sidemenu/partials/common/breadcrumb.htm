@@ -1,4 +1,14 @@
-
-<div class="mt-30">
-    {% component 'breadcrumbs' %}
-</div>
+{% if breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/">{{ 'Home'|_ }}</a>
+        {% for breadcrumb in breadcrumbs %}
+    <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+        {% if loop.last %}
+        {{ breadcrumb.title }}
+        {% else %}
+        <a href="{{ breadcrumb.url }}">{{ breadcrumb.title }}</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ol>
+{% endif %}

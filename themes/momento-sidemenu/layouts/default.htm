@@ -1,7 +1,11 @@
 description = "Default layout"
 
+[staticPage]
+
 [staticMenu mainMenu]
-code = "main-menu"
+code = "main-menu-static-pages"
+
+[staticBreadcrumbs]
 
 [session]
 security = "all"
@@ -22,7 +26,7 @@ disabled-class = "disabled"
     {% partial 'common/header-area' %}
 </header>
 
-<section id="content">
+<section>
     {% page %}
 </section>
 

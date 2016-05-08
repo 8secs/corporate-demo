@@ -1,25 +1,32 @@
+{% partial 'ProjectCategories::toolbar' %}
+<div class="grid">
+    <div class="grid">
+        <div class="isotope {{ class }}">
+            {% for params in __SELF__.projects %}
+            {% if params.project_categories %}
 
-{% for params in __SELF__.projects %}
-    {% if params.project_categories %}
+            {% set categories = params.project_categories %}
+            {% set categoryNames = "" %}
+            {% set escape = " " %}
 
-        {% set categories = params.project_categories %}
-        {% set categoryNames = "" %}
-        {% set escape = " " %}
-
-        {% for category in categories %}
+            {% for category in categories %}
             {% set categoryNames = categoryNames ~ escape ~ category.name|lower|replace(' ', '_') %}
-        {% endfor %}
+            {% endfor %}
 
-        <div class="grid-item listing-effect  {{ categoryNames }}">
-            <a href="{{ 'works/work'|page({ slug: params.slug }) }}">
-                <img class="img-fluid" src="{{ params.picture.getPath() }}" alt="{{ params.name }}" >
-                <div class="work-detail">
-                    <h3 class="listing-effect-title">{{ params.name }}</h3>
-                    <div class="listing-meta">{{ params.customer }}</div>
-                </div>
-            </a>
+            <div class="grid-item listing-effect  {{ categoryNames }}">
+                <a href="{{ 'works/work'|page({ slug: params.slug }) }}">
+                    <img class="img-fluid" src="{{ params.picture.getPath() }}" alt="{{ params.name }}" >
+                    <div class="work-detail">
+                        <h3 class="listing-effect-title">{{ params.name }}</h3>
+                        <div class="listing-meta">{{ params.customer }}</div>
+                    </div>
+                </a>
+            </div>
+
+            {% endif %}
+            {% endfor %}
         </div>
+    </div>
+</div>
 
-    {% endif %}
-{% endfor %}
 

@@ -26,138 +26,22 @@ sort = "desc"
 <div class="padding-b">
     {% partial 'common/header-page' page='work' %}
 
-    {% set project = Project.project %}
+    {% component 'Project' %}
 
-<section>
-    {% if project.pictures.count > 0 %}
-    <div class="portfolio owl-carousel owl-theme">
-        {% for picture in project.pictures %}
-        <div class="item">
-            <img src="{{ picture.getPath() }}" alt="{{ picture.title }}" class="img-fluid">
-        </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <div class="portfolio">
-        <div class="item">
-            <img src="{{ project.picture.getPath() }}" alt="{{ picture.title }}" class="img-fluid">
-        </div>
-    </div>
-    {% endif %}
-    <!-- /.project owl-slider -->
-</section>
-
-<section class="portfolio padding-45">
-    <div class="portfolio-row">
-        <div class="portfolio-content">
-            <div class="heading">
-                <h3>{{ project.name }}</h3>
-            </div>
-
-            {{ project.description|raw }}
-
-        </div>
-
-        <div class="portfolio-sidebar">
-
-            <h4>{{ 'Client'|_ }}</h4>
-            <p>{{ project.customer }}</p>
-
-            <h4>{{ 'Categories'|_ }}</h4>
-
-            {% set projectCategories = project.project_categories %}
-            {% set categoryNames = "" %}
-            {% for category in projectCategories %}
-            {% if not loop.last %}
-            {% set categoryNames = categoryNames ~ category.name ~ ', ' %}
-            {% else %}
-            {% set categoryNames = categoryNames ~ category.name %}
-            {% endif %}
-            {% endfor %}
-            <p>{{ categoryNames }}</p>
-
-            {% set services = project.services %}
-            {% if services.count > 0 %}
-            <h4>{{ 'Services'|_ }}</h4>
-            {% set serviceNames = "" %}
-            {% for service in services %}
-            {% if not loop.last %}
-            {% set serviceNames = serviceNames ~ service.name ~ ", " %}
-            {% else %}
-            {% set serviceNames = serviceNames ~ service.name %}
-            {% endif %}
-            {% endfor %}
-            <p>{{ serviceNames }}</p>
-            {% endif %}
-
-
-            {% set technologies = project.technologies %}
-            {% if technologies.count > 0 %}
-            <h4>{{ 'Technologies'|_ }}</h4>
-            {% set techNames = "" %}
-            {% for tech in technologies %}
-            {% if not loop.last %}
-            {% set techNames = techNames ~ tech.name ~ ", " %}
-            {% else %}
-            {% set techNames = techNames ~ tech.name %}
-            {% endif %}
-            {% endfor %}
-            <p>{{ techNames }}</p>
-            {% endif %}
-            <h4>{{ 'Dates'|_ }}</h4>
-            <p>{{ project.published_at|date('d-m-Y') }}</p>
-        </div>
-
-    </div>
-
-    <div class="portfolio-row">
-        <div class="portfolio-title">
-            <div class="heading">
-                <h3>{{ 'Related projects'|_ }}</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-row">
-        {% for related in relatedProjects %}
-        {% set item = related[0] %}
-        <div class="portfolio-related">
-            <div class="box-image">
-                <div class="image">
-                    <img src="{{ related.picture.getPath() }}" alt="{{ related.name }}" class="img-fluid">
-                </div>
-                <div class="bg"></div>
-                <div class="name">
-                    <h3><a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}">{{ related.name }}</a></h3>
-                </div>
-                <div class="text">
-                    <p class="buttons">
-                        <a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}" class="btn btn-template-transparent-primary">{{ 'View'|_ }}</a>
-                        <a href="{{ related.url }}" class="btn btn-template-transparent-primary" target="_blank">{{ 'Website'|_ }}</a>
-                    </p>
+    <section>
+        <div class="portfolio-row">
+            <div class="portfolio-title">
+                <div class="heading">
+                    <h3>{{ 'Related projects'|_ }}</h3>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
 
-</section>
-
+        <div class="portfolio-row">
+            {% partial 'Project::related' %}
+        </div>
+    </section>
 
 </div>
 
-{% put scripts %}
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('body').addClass('without-background nav-lock-scroll');
-        $('.owl-carousel').owlCarousel({
-            items: 1,
-            loop: true,
-            center: true,
-            nav: true,
-            dots: true,
-            autoplay: true
-        });
-    });
-</script>
-{% endput %}
+{% partial 'common/body-class-script' %}

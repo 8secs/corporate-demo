@@ -27,6 +27,38 @@ tabs:
           imageWidth: 260
           span: auto
           tab: andresrangel.coorporation::lang.labels.content
+      address:
+          label: andresrangel.coorporation::lang.labels.address
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.address
+      state:
+          label: andresrangel.coorporation::lang.labels.state
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.address
+      city:
+          label: andresrangel.coorporation::lang.labels.city
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.address
+      country:
+          label: andresrangel.coorporation::lang.labels.country
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.address
+      cp:
+          label: andresrangel.coorporation::lang.labels.cp
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.address
+      phone:
+          label: andresrangel.coorporation::lang.labels.phone
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.information
+      email:
+          label: andresrangel.coorporation::lang.labels.email
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.information
+      open:
+          label: andresrangel.coorporation::lang.labels.open
+          span: auto
+          tab: andresrangel.coorporation::lang.labels.information
       facebook:
           type: text
           label: andresrangel.coorporation::lang.company.facebook

@@ -70,6 +70,7 @@ return [
         'picture'                   => 'Picture',
         'email'                     => 'Email',
         'phone'                     => 'Phone',
+        'open'                      => 'Open',
         'fax'                       => 'Fax',
         'published_at'              => 'Published',
         'date_start'                => 'Date start',
@@ -94,6 +95,9 @@ return [
         'countries'                 => 'Countries',
         'state'                     => 'State',
         'states'                    => 'States',
+        'address'                   => 'Address',
+        'city'                      => 'City',
+        'cp'                        => 'Postal Code'
 
 
 

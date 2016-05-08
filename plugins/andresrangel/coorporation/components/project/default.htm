@@ -1,29 +1,58 @@
 {% set project = __SELF__.project %}
 
 <section>
-    <div class="project owl-carousel">
+    <!-- ---------------------- IMAGES ---------------------- -->
+    {% if project.pictures.count > 0 %}
+    <div class="portfolio owl-carousel owl-theme">
         {% for picture in project.pictures %}
         <div class="item">
-            <img src="{{ picture.getPath() }}" alt="{{ picture.title }}" class="img-responsive">
+            <img src="{{ picture.getPath() }}" alt="{{ picture.title }}" class="img-fluid">
         </div>
         {% endfor %}
     </div>
+    {% else %}
+    <div class="portfolio">
+        <div class="item">
+            <img src="{{ project.picture.getPath() }}" alt="{{ picture.title }}" class="img-fluid">
+        </div>
+    </div>
+    {% endif %}
     <!-- /.project owl-slider -->
 </section>
 
-<section>
-    <div class="row portfolio-project">
-        <div class="col-md-8">
+<section class="portfolio padding-45">
+    <!-- ---------------------- CONTENT ---------------------- -->
+    <div class="portfolio-row">
+        <div class="portfolio-content">
             <div class="heading">
                 <h3>{{ project.name }}</h3>
             </div>
-
             {{ project.description|raw }}
-
         </div>
-
-        {% partial __SELF__ ~ '::sidebar' %}
-
     </div>
+
+    <!-- ---------------------- SIDEBAR ---------------------- -->
+
+    <div class="portfolio-sidebar">
+        {% partial __SELF__ ~ '::sidebar' %}
+    </div>
+
 </section>
+
+{% put scripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            loop: true,
+            center: true,
+            nav: true,
+            dots: true,
+            autoplay: true
+        });
+    });
+</script>
+{% endput %}
+
+
 

@@ -1,0 +1,22 @@
+description = "Portfolio list"
+
+[viewBag]
+snippetCode = "team-widget"
+snippetName = "Team List"
+
+[Employees]
+==
+
+<div class="team padding-75">
+    <div class="about-detail-row">
+        <div class="full-width">
+            <div class="heading-part">
+                <h2 class="about-title">{{ 'Our Team'|_ }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-detail-row">
+        {% component 'Employees' %}
+    </div>
+</div>

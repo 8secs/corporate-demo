@@ -21,4 +21,11 @@ slug = "{{ :slug }}"
 displayEmpty = 0
 projectCategoryPage = "works/project-categories"
 ==
-{% component 'Projects' %}
+<div class="padding-b">
+    {% partial 'common/header-page' page='projectCategories' %}
+
+    {% partial 'snippet/portfolio' class=" four-col-work work-no-spacing" %}
+</div>
+
+
+{% partial 'common/body-class-script' %}

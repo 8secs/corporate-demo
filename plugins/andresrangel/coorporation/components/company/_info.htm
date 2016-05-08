@@ -1,0 +1,45 @@
+{% set company = __SELF__.company %}
+
+<div class="contact-row no-margin">
+
+    <div class="contact-info-col no-padding">
+
+        <div class="contact-box">
+
+            <i class="fa fa-phone fa-2x"></i>
+
+            <span><b>{{ 'Tel'|_ }}</b></span>
+
+            {{ company.phone }}
+
+        </div>
+
+    </div>
+
+    <div class="contact-info-col no-padding">
+
+        <div class="contact-box">
+
+            <i class="fa fa-envelope fa-2x"></i>
+
+            <span><b>{{ 'Email'|_ }}</b></span>
+
+            {{ company.email }}
+
+        </div>
+
+    </div>
+
+    <div class="contact-info-col no-padding">
+
+        <div class="contact-box">
+
+            <i class="fa fa-home fa-2x"></i>
+            <span><b>{{ 'Open'|_ }}</b></span>
+            {{ company.open }}
+
+        </div>
+
+    </div>
+
+</div>

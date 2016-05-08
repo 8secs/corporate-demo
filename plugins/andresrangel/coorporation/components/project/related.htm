@@ -1,20 +1,20 @@
 {% for related in relatedProjects %}
-    {% set item = related[0] %}
-    <div class="col-sm-6 col-md-3">
-        <div class="box-image">
-            <div class="image">
-                <img src="{{ related.picture.getPath() }}" alt="{{ related.name }}" class="img-responsive">
-            </div>
-            <div class="bg"></div>
-            <div class="name">
-                <h3><a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}">{{ related.name }}</a></h3>
-            </div>
-            <div class="text">
-                <p class="buttons">
-                    <a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}" class="btn btn-template-transparent-primary">{{ 'View'|_ }}</a>
-                    <a href="{{ related.url }}" class="btn btn-template-transparent-primary" target="_blank">{{ 'Website'|_ }}</a>
-                </p>
-            </div>
+{% set item = related[0] %}
+<div class="portfolio-related">
+    <div class="box-image">
+        <div class="image">
+            <img src="{{ related.picture.getPath() }}" alt="{{ related.name }}" class="img-fluid">
+        </div>
+        <div class="bg"></div>
+        <div class="name">
+            <h3><a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}">{{ related.name }}</a></h3>
+        </div>
+        <div class="text">
+            <p class="buttons">
+                <a href="{{ 'portfolio/project'|page({ slug: related.slug }) }}" class="btn btn-template-transparent-primary">{{ 'View'|_ }}</a>
+                <a href="{{ related.url }}" class="btn btn-template-transparent-primary" target="_blank">{{ 'Website'|_ }}</a>
+            </p>
         </div>
     </div>
+</div>
 {% endfor %}

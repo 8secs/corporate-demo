@@ -16,8 +16,8 @@ security = "all"
     {% partial 'common/meta' %}
 </head>
 <body>
+{variable tab="Header" type="text" name="longtitle" label="Long Title"}{/variable}
 {variable tab="Header" type="text" name="tagline" label="Tagline"}{/variable}
-{variable tab="Header" type="mediafinder" mode="image" name="banner" label="Banner image"}{/variable}
 <header>
     {% partial 'common/header-area' %}
 </header>
@@ -34,6 +34,7 @@ security = "all"
 
 
 </div>
+
 {% partial 'common/scripts' %}
 
 </body>

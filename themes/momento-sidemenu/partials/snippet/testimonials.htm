@@ -1,0 +1,25 @@
+description = "Your clients opinion"
+
+[viewBag]
+snippetCode = "testimonials"
+snippetName = "Testimonials"
+
+[Testimonials]
+==
+
+<div class="about-detail-container padding-75">
+    <div class="about-detail-row">
+        <div class="full-width">
+            <div class="heading-part">
+                <h2 class="about-title">{{ 'Client Says'|_ }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="about-detail-row">
+        <div class="full-width">
+            <div id="client" class="owl-carousel owl-theme">
+                {% component 'Testimonials' %}
+            </div>
+        </div>
+    </div>
+</div>

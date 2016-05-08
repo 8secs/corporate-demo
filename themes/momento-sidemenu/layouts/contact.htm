@@ -1,0 +1,66 @@
+description = "Contact Static Layout"
+
+[staticPage]
+
+[staticBreadcrumbs]
+
+[staticMenu mainMenu]
+code = "main-menu-static-pages"
+
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+
+{variable tab="Header" type="text" name="longtitle" label="Long Title"}{/variable}
+{variable tab="Header" type="text" name="tagline" label="Tagline"}{/variable}
+
+<header>
+    {% partial 'common/header-area' %}
+</header>
+
+<section>
+    {% partial 'common/header-page' page="static" %}
+</section>
+
+<section>
+    <div class="map">
+        {% page %}
+    </div>
+</section>
+
+<section>
+    <div class="contact-container padding-75 text-center">
+        {% partial 'contact/info' %}
+    </div>
+</section>
+
+<section class="padding-b">
+    <div class="contact-container main-form">
+        <div class="heading-part">
+            <h2 class="main_title mt-30 mb-30">{{ 'Leave a message!'|_ }}</h2>
+        </div>
+        <div class="contact-row">
+            {% partial 'contact/form' %}
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    {% partial 'common/footer' %}
+</footer>
+
+<div id="copyright">
+
+
+</div>
+
+{% partial 'common/scripts' %}
+
+</body>
+</html>

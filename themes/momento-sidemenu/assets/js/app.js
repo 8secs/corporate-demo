@@ -9,6 +9,7 @@ $(document).ready(function(){
             $('#menu-toggle').addClass('open');
         }
     });
+
 });
 
 $(window).scroll(function() {

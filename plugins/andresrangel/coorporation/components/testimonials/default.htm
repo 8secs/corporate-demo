@@ -1,24 +1,24 @@
-<div class="col-xs-12">
-    <div class="testimonial-feed">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                {% for testimonial in __SELF__.testimonials %}
-                <div class="item active text-center">
-                    <div class="image-bar" ><img src="{{ testimonial.picture.thumb(100, 100) }}" alt=""></div>
-                    <p>{{ testimonial.content }}</p>
-                    <span class="pull-right"> {{ testimonial.source }}</span>
-                </div>
-                {% endfor %}
-            </div><!-- carousel-inner -->
-        </div><!-- carousel -->
-    </div><!-- testimonial-feed -->
-    <div class="control-arrow">
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <i class="flaticon-previous11"></i>
-        </a>
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <i class="flaticon-next15"></i>
-        </a>
-    </div><!-- /.control-arrow -->
-</div><!-- /.col-xs-12 -->
+{% for testimonial in __SELF__.testimonials %}
+<div class="item client-detail">
+    <p>{{ testimonial.content }}</p>
+    <h3 class="sub-title client-title">- {{ testimonial.source }} -</h3>
+    {% if testimonial.picture %}
+    <img src="{{ testimonial.picture.thumb(100, 100) }}" alt="" />
+    {% endif %}
+</div>
+{% endfor %}
+
+{% put scripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            loop: true,
+            center: true,
+            nav: true,
+            dots: true,
+            autoplay: true
+        });
+    });
+</script>
+{% endput %}
