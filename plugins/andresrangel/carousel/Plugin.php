@@ -61,8 +61,16 @@ class Plugin extends PluginBase
     {
         return [
             'andresrangel.carousel.access_carousel' => [
-                'tab' => 'Carousel',
-                'label' => 'Some permission'
+                'label' => 'andresrangel.carousel::lang.carousel.list_title',
+                'tab'   => 'andresrangel.carousel::lang.plugin.name',
+            ],
+            'andresrangel.carousel.access_slides' => [
+                'label' => 'andresrangel.carousel::lang.slide.list_title',
+                'tab'   => 'andresrangel.carousel::lang.plugin.name',
+            ],
+            'andresrangel.carousel.access_items' => [
+                'label' => 'andresrangel.carousel::lang.item.list_title',
+                'tab'   => 'andresrangel.carousel::lang.plugin.name',
             ],
         ];
     }
@@ -88,21 +96,21 @@ class Plugin extends PluginBase
                         'label'       => 'andresrangel.carousel::lang.carousels.menu_label',
                         'icon'        => 'icon-caret-square-o-right',
                         'url'         => Backend::url('andresrangel/carousel/carousel'),
-                        'permissions' => ['andresrangel.carousel.access_carousels'],
+                        'permissions' => ['andresrangel.carousel.access_carousel'],
                         'description' => 'andresrangel.carousel::lang.carousel.description',
                     ],
                     'slides' => [
                         'label'       => 'andresrangel.carousel::lang.slides.menu_label',
                         'icon'        => 'icon-sliders',
                         'url'         => Backend::url('andresrangel/carousel/slides'),
-                        'permissions' => ['andresrangel.carousel.access_carousels'],
+                        'permissions' => ['andresrangel.carousel.access_slides'],
                         'description' => 'andresrangel.carousel::lang.slides.description',
                     ],
                     'items' => [
                         'label'       => 'andresrangel.carousel::lang.items.menu_label',
                         'icon'        => 'icon-list',
                         'url'         => Backend::url('andresrangel/carousel/items'),
-                        'permissions' => ['andresrangel.carousel.access_carousels'],
+                        'permissions' => ['andresrangel.carousel.access_items'],
                         'description' => 'andresrangel.carousel::lang.items.description',
                     ],
                 ],

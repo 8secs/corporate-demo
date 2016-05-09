@@ -10,6 +10,8 @@ use Lang;
  */
 class Slides extends Controller
 {
+    public $requiredPermissions = ['andresrangel.carousel.access_slides'];
+
     public $implement = [
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',

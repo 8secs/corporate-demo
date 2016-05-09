@@ -3,10 +3,7 @@ url = "/works/work/:slug"
 layout = "default"
 description = "Work Detail Page"
 is_hidden = 0
-child_of = "works/works"
-hide_crumb = 0
-remove_crumb_trail = 0
-crumb_disabled = 0
+
 
 [Projects]
 pageNumber = "{{ :page }}"
@@ -26,7 +23,22 @@ sort = "desc"
 <div class="padding-b">
     {% partial 'common/header-page' page='work' %}
 
-    {% component 'Project' %}
+    <section>
+        {% partial 'Project::carousel' %}
+    </section>
+
+    <section class="portfolio padding-45">
+        <div class="portfolio-row">
+            <div class="portfolio-content">
+                {% component 'Project' %}
+                <hr>
+                {% partial 'common/social' %}
+            </div>
+            <div class="portfolio-sidebar">
+                {% partial 'Project::sidebar' %}
+            </div>
+        </div>
+    </section>
 
     <section class="portfolio padding-45">
         <div class="portfolio-row">

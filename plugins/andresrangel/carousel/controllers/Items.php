@@ -11,6 +11,8 @@ use Lang;
  */
 class Items extends Controller
 {
+    public $requiredPermissions = ['andresrangel.carousel.access_items'];
+
     public $implement = [
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',

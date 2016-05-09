@@ -1,0 +1,23 @@
+==
+<?php
+use Illuminate\Support\Facades\Request;
+
+function onEnd()
+{
+    $this->page->share_url = Request::url();
+}
+?>
+==
+<div class="oc-share">
+    <a class="btn btn-default btn-xs" target="_blank" title="On Facebook" href="http://www.facebook.com/sharer.php?u={{share_url}}">
+        <i class="fa fa-facebook"></i>
+    </a>
+
+    <a class="btn btn-default btn-xs" target="_blank" title="On Twitter" href="http://twitter.com/share?url={{share_url}}">
+        <i class="fa fa-twitter"></i>
+    </a>
+
+    <a class="btn btn-default btn-xs" target="_blank" title="On Google Plus" href="https://plus.google.com/share?url={{share_url}}">
+        <i class="fa fa-google-plus"></i>
+    </a>
+</div>

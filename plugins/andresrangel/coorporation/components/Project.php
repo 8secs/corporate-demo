@@ -1,6 +1,7 @@
 <?php namespace AndresRangel\Coorporation\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Lang;
 use Cms\Classes\Page;
@@ -67,6 +68,8 @@ class Project extends ComponentBase
     {
         $this->project = $this->page['project'] = $this->loadProject();
         $this->relatedProjects = $this->page['relatedProjects'] = $this->loadRelated();
+
+        $this->page['share_url'] = Request::url();
     }
 
     protected function loadProject()
