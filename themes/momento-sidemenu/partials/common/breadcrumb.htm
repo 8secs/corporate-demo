@@ -1,12 +1,12 @@
 {% if breadcrumbs %}
 <ol class="breadcrumb">
-    <li><a href="/">{{ 'Home'|_ }}</a>
+    <li><a href="{{ '/'|app }}">{{ 'Home'|_ }}</a>
         {% for breadcrumb in breadcrumbs %}
     <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
         {% if loop.last %}
         {{ breadcrumb.title }}
         {% else %}
-        <a href="{{ breadcrumb.url }}">{{ breadcrumb.title }}</a>
+        <a href="{{ breadcrumb.url|app }}">{{ breadcrumb.title }}</a>
         {% endif %}
     </li>
     {% endfor %}

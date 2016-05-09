@@ -13,8 +13,8 @@
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
             <div class="post-info">
                 <ul>
-                    <li><a href=""><i class="fa fa-user"></i>{{ post.user.first_name }}</a> </li>
-                    <li><a href=""><i class="fa fa-calendar"></i></a>{{ post.published_at|date('M d, Y') }} </li>
+                    <li><i class="fa fa-user"></i><a href="">{{ post.user.first_name }}</a> </li>
+                    <li><i class="fa fa-calendar"></i><a href=""></a>{{ post.published_at|date('M d, Y') }} </li>
                     {% if post.categories.count %}
                     <li>
                         <i class="fa fa-list"></i>

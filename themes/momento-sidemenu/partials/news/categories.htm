@@ -5,7 +5,7 @@
     {% for category in categories %}
     {% set postCount = category.post_count %}
     <li>
-        <a href="{{ category.url }}"
+        <a href="{{ category.url|app }}"
            class="{{ category.slug == currentCategorySlug ? 'active' }}">
             {{ category.name }}
             {% if postCount %}
