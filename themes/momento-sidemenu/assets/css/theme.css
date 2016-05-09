@@ -8137,6 +8137,14 @@ span.hr-row {
     .news-sidebar {
       width: 33.33333%; } }
 
+.news-full-width {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%; }
+
 .blog-content {
   display: inline-block;
   width: 100%; }
@@ -8148,8 +8156,8 @@ span.hr-row {
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
       .blog-content .blog-item .inner-box .blog-detail {
         margin-top: -10px;
-        padding: 30px;
-        font-size: 14px; }
+        padding: 2rem;
+        font-size: 1rem; }
       .blog-content .blog-item .inner-box .post-info ul {
         display: -webkit-inline-box;
         display: -webkit-inline-flex;
@@ -8158,15 +8166,15 @@ span.hr-row {
         margin: 0; }
         .blog-content .blog-item .inner-box .post-info ul li {
           float: left;
-          margin-right: 15px;
-          font-size: 14px;
+          margin-right: 1rem;
+          font-size: 1rem;
           padding: 0; }
           .blog-content .blog-item .inner-box .post-info ul li a {
-            color: #1f1f1f; }
+            color: #373a3c; }
       .blog-content .blog-item .inner-box .post-info i.fa {
         margin-right: 5px; }
     .blog-content .blog-item a {
-      color: #1f1f1f;
+      color: #373a3c;
       font-weight: normal;
       overflow: hidden;
       text-transform: none;
@@ -8179,7 +8187,7 @@ span.hr-row {
     max-width: 100%; }
 
 .sidebar-block .sidebar-widget {
-  background: #f6f6f6;
+  background: #f7f7f9;
   padding: 20px;
   margin-bottom: 30px;
   font-size: 14px; }
@@ -8199,8 +8207,34 @@ span.hr-row {
     padding: 0; }
     .sidebar-block .sidebar-widget ul.tagcloud li a {
       padding: 5px 10px;
-      border: 1px solid #e8e8e8;
+      border: 1px solid #f7f7f9;
       display: inline-block; }
+
+.posts-total-summary {
+  text-align: right; }
+
+.post-area textarea {
+  background: #f7f7f9;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: none; }
+
+.post-buttons button {
+  margin-top: 10px;
+  padding: 7px 25px;
+  display: inline-block;
+  text-transform: uppercase;
+  background: #373a3c;
+  color: #f7f7f9;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0;
+  border: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+          transition: all 0.4s ease-in-out 0s; }
+  .post-buttons button:hover {
+    background: #dcbd71;
+    color: #373a3c; }
 
 .contact-container {
   margin-left: auto;

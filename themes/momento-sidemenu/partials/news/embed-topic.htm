@@ -1,0 +1,58 @@
+<div class="rainlab-forum">
+
+    {% flash %}
+    <div class="alert alert-{{ type == 'error' ? 'danger' : type }}">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    </div>
+    {% endflash %}
+
+    {% if topic %}
+
+    <h4>{{ 'Comments'|_ }}</h4>
+
+    <hr>
+    <div class="news-row">
+
+        <div class="news-content">
+
+            {% partial "forumEmbedTopic::posts" %}
+
+            {% partial "forumEmbedTopic::pagination" %}
+
+            <h4>{{ 'Leave a comment'|_ }}</h4>
+            {% if not topic.canPost %}
+            <p>
+                {{ 'You cannot edit posts or make replies:'|_ }}
+                {% if member.is_banned %}{{ 'Your account is banned.'|_ }}{% endif %}
+                {% if topic.is_locked %}{{ 'This topic is locked.'|_ }}{% endif %}
+            </p>
+            {% else %}
+            {% if member %}
+            {% partial "forumEmbedTopic::postform" %}
+            {% else %}
+            <p>{{ 'You should be logged in before you can post.'|_ }}</p>
+            {% endif %}
+            {% endif %}
+
+        </div>
+        <div class="news-sidebar">
+
+            <div id="topicControlPanel">
+                {% partial "news/control-panel" %}
+            </div>
+
+        </div>
+    </div>
+
+    {% elseif channel %}
+
+    <h4>{{ 'Create a new discussion topic'|_ }}</h4>
+    {% partial "forumEmbedTopic::createform" %}
+
+    {% else %}
+
+    <p>{{ 'Topic not found'|_ }}</p>
+
+    {% endif %}
+</div>

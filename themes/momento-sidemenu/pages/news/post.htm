@@ -21,6 +21,13 @@ embedCode = "{{ :slug }}"
 channelSlug = "blog-comments"
 memberPage = "news/categories"
 ==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->post->title;
+}
+?>
+==
 {% set post = blogPost.post %}
 
 
@@ -32,10 +39,15 @@ memberPage = "news/categories"
         <div class="news-row">
             <div class="news-content">
                 {% partial 'news/post' %}
-                {% component 'forumEmbedTopic' %}
             </div>
             <div class="news-sidebar">
                 {% partial 'news/sidebar' %}
+            </div>
+        </div>
+        <div class="news-row">
+            <div class="news-full-width">
+
+                {% partial 'news/embed-topic' %}
             </div>
         </div>
     </div>

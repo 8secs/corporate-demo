@@ -24,6 +24,14 @@
   }
 }
 
+.news-full-width {
+  @include make-col();
+
+  @include media-breakpoint-up(xs) {
+    @include make-col-span(12);
+  }
+}
+
 .blog-content {
   display: inline-block;
   width: 100%;
@@ -38,8 +46,8 @@
 
       .blog-detail {
         margin-top: -10px;
-        padding: 30px;
-        font-size: 14px;
+        padding: $spacer * 2;
+        font-size: $font-size-base;
       }
 
       .post-info {
@@ -48,11 +56,11 @@
           margin: 0;
           li {
             float: left;
-            margin-right: 15px;
-            font-size: 14px;
+            margin-right: $spacer;
+            font-size: $font-size-base;
             padding: 0;
             a{
-              color: #1f1f1f;
+              color: $gray-dark;
             }
           }
         }
@@ -65,7 +73,7 @@
     }
 
     a{
-      color: #1f1f1f;
+      color: $gray-dark;
       font-weight: normal;
       overflow: hidden;
       text-transform: none;
@@ -86,7 +94,7 @@
 
 .sidebar-block {
   .sidebar-widget {
-    background: #f6f6f6;
+    background: $gray-lightest;
     padding: 20px;
     margin-bottom: 30px;
     font-size: 14px;
@@ -111,11 +119,44 @@
         padding: 0;
         a {
           padding: 5px 10px;
-          border: 1px solid #e8e8e8;
+          border: 1px solid $gray-lightest;
           display: inline-block;
         }
       }
     }
   }
 
+}
+
+.posts-total-summary{
+  text-align: right;
+}
+
+.post-area {
+  textarea {
+    background: $gray-lightest;
+    padding: $spacer/2 $spacer;
+    width: 100%;
+    border: none;
+  }
+}
+
+.post-buttons {
+  button {
+    margin-top: 10px;
+    padding: 7px 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    background: $gray-dark;
+    color: $gray-lightest;
+    font-weight: 700;
+    font-size: $font-size-base;
+    border-radius: 0;
+    border: 0;
+    transition: $brand-default-transition;
+    &:hover {
+      background: $brand-primary;
+      color: $gray-dark;
+    }
+  }
 }
