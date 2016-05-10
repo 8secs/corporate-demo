@@ -1,0 +1,59 @@
+description = "Portfolio list"
+
+[viewBag]
+snippetCode = "portfolio-snippet"
+snippetName = "Portfolio Showlist"
+snippetProperties[class|type] = "dropdown"
+snippetProperties[class|title] = "Css Class"
+snippetProperties[class|default] = "three-col-work"
+snippetProperties[class|options][three-col-work] = "three columns"
+snippetProperties[class|options][four-col-work] = "four columns"
+
+
+[ProjectCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+projectCategoryPage = "portfolio/category"
+
+[Projects]
+pageNumber = "{{ :page }}"
+projectsPerPage = 10
+noProjectsMessage = "No projects found"
+sortOrder = "published_at desc"
+projectCategoryPage = "portfolio/category"
+projectPage = "portfolio/project"
+==
+
+<div class="grid">
+    <div class="grid">
+        <div class="isotope {{ class }} zoom-gallery">
+            {% component 'Projects' %}
+        </div>
+    </div>
+</div>
+
+{% put scripts %}
+<script type="text/javascript">
+    $(window).load(function() {
+        // init Isotope
+        var $container = $('.isotope').isotope({
+            itemSelector: '.grid-item',
+            layoutMode: 'fitRows',
+            getSortData: {
+
+            }
+        });
+
+        // bind filter click
+
+        $('.portfolio-filter').on('click', 'li a', function() {
+            var filterValue = $(this).attr('data-filter');
+            // use filterFn if matches value
+            $container.isotope({
+                filter: filterValue
+            });
+        });
+
+    });
+</script>
+{% endput %}

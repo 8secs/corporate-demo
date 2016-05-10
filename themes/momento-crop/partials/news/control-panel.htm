@@ -1,0 +1,35 @@
+<div class="sidebar-block">
+    <div class="sidebar-widget">
+
+        <div class="sidebar-title">
+            <h4><i class="fa fa-eye icon-eye-open"></i> {{ topic.count_views }} {{ 'views'|_ }}</h4>
+        </div>
+        <hr>
+
+        <ul>
+            <li>
+                {% if member %}
+                <a href="javascript:;"
+                   data-request="onFollow"
+                   data-request-update="'forumEmbedTopic::controlpanel': '#topicControlPanel'">
+                    {% if member.isFollowing(topic) %}
+                    {{ 'Unfollow this topic'|_ }}
+                    {% else %}
+                    {{ 'Follow this topic'|_ }}
+                    {% endif %}
+                </a>
+                {% endif %}
+            </li>
+            <li>
+                {% if topic.is_locked %}
+                    <span class="text text-danger"><i class="icon icon-lock"></i>{{ 'This topic is locked'|_ }}</span>
+                {% else %}
+                <a href="#postForm">
+                    {{ 'Post a reply'|_ }}
+                </a>
+                {% endif %}
+            </li>
+        </ul>
+
+    </div>
+</div>

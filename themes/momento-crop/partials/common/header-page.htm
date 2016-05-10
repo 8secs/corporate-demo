@@ -1,0 +1,27 @@
+<div class="header-page-container">
+    <div class="header-page-row">
+        <div class="header-page-title-col">
+            <div class="padding-b">
+                <div class="heading-part mt-40">
+                    {% if page != 'static' %}
+                        {% if page != 'work' %}
+                            {% content page ~ '/title' %}
+                        {% else %}
+                            <h1 class="">{{ Project.project.name }}</h1>
+                        {% endif %}
+                    {% else %}
+                        {% if longtitle %}
+                            <h1 class="">{{ longtitle }}</h1>
+                        {% else %}
+                            <h1 class="">{{ this.page.title }}</h1>
+                        {% endif %}
+                        <p>{{ tagline }}</p>
+                    {% endif %}
+
+                    {% partial 'common/breadcrumb' %}
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>  

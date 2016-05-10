@@ -1,7 +1,7 @@
 {
-  "name": "momento-sidemenu",
+  "name": "momento-crop",
   "version": "1.0.0",
-  "description": "Momento Theme SideMenu",
+  "description": "Momento Theme Crop",
   "main": "index.js",
   "dependencies": {
     "grunt": "^1.0.1"
@@ -12,6 +12,7 @@
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-cssnano": "^2.1.0",
     "grunt-postcss": "^0.8.0",
     "isotope-layout": "^2.2.2",
     "jit-grunt": "^0.10.0",

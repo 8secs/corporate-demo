@@ -1,0 +1,62 @@
+description = "Working with static pages"
+
+[staticPage]
+
+[staticMenu mainMenu]
+code = "main-menu"
+
+[session]
+security = "all"
+
+[googleTracker]
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+
+<div id="ip-container" class="ip-container">
+    <div class="ip-header">
+        <div class="ip-loader">
+            <svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+                <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"></path>
+                <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" style="stroke-dashoffset: 0; stroke-dasharray: 192.617;"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="ip-main">
+        <div class="menu-wrapper">
+            <div class="container">
+                <header>
+                    <div class="logo">
+                        <a href="{{ '/'|app }}">
+                            <img src="{{ 'assets/images/logo.png'|theme }}" alt="">
+                        </a>
+                    </div>
+                    {% partial 'common/nav' %}
+                </header>
+            </div>
+        </div>
+        <div class="page-title">
+            <div class="page-title-row">
+                <div class="page-title-col">
+                    <h1>Great experiences build great <span class="theme-color">brands.</span></h1>
+                    <img src="{{ 'assets/images/branding-border.png'|theme }}" alt="" class="heading-border">
+                    <p>Through brand strategy and design, we craft experiences that help brands stand out as well as stand for something.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="portfolio padding-75">
+        {% placeholder portfolio title="Portfolio" %}
+    </section>
+</div><!-- /container -->
+
+{% partial 'common/scripts' %}
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+[Company]
+==
+<div class="footer-container">
+    <div class="footer-row">
+        <div class="footer-item">
+            {% partial 'Company::_slogan' %}
+        </div>
+    </div>
+    <div class="footer-row">
+        <div class="footer-item">
+            <div class="footer-title">{{ 'Have questions?'|_ }}</div>
+            {% partial 'Company::_address' %}
+            <div class="social-icon">
+                {% partial 'Company::_social' %}
+            </div>
+        </div>
+    </div>
+    <div class="footer-row">
+        <div class="footer-item">
+            <span class="hr-row"></span>
+            <div class="footer-link">
+                {% partial 'common/nav-footer' %}
+            </div>
+            <div class="copyright-part"> &copy;{{ "now"|date("Y") }} - Created by Momento Eureka</div>
+        </div>
+    </div>
+</div>

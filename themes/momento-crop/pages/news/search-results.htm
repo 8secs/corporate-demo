@@ -1,0 +1,35 @@
+title = "Search Results"
+url = "/news/search/:search?/:page?"
+layout = "default"
+is_hidden = 0
+
+
+[searchResult]
+searchTerm = "{{ :search }}"
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "news/categories"
+postPage = "news/post"
+==
+
+{% set posts = searchResult.posts %}
+
+<div class="news-container">
+    <div class="padding-75">
+        <div class="news-row">
+            {% partial 'common/header-page' page="news" %}
+        </div>
+        <div class="news-row">
+            <div class="news-content">
+                {% partial 'news/posts' posts=posts searchTerm=searchResult.searchTerm %}
+            </div>
+            <div class="news-sidebar">
+                {% partial 'news/sidebar' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% partial 'common/body-class-script' %}

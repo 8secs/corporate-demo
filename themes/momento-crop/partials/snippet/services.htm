@@ -1,0 +1,25 @@
+description = "Add Your company Services"
+
+[viewBag]
+snippetCode = "services"
+snippetName = "Company Services"
+
+[Services]
+==
+<div class="services-part gray-bg padding-75">
+    <div class="about-detail-container">
+        <div class="about-detail-row">
+            {% for params in services %}
+            <div class="service-item">
+                <div class="service-box col-sm-margin-b col-sm-center">
+                    <a href="#">
+                        <i class="fa {{ params.icon }} fa-4x" aria-hidden="true"></i>
+                        <h3 class="sub-title">{{ params.name }}</h3>
+                        {{ params.description|raw }}
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

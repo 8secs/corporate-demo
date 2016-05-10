@@ -1,0 +1,88 @@
+description = "About Static Layout"
+
+[staticPage]
+
+[staticBreadcrumbs]
+
+[staticMenu mainMenu]
+code = "main-menu"
+
+[googleTracker]
+
+[session]
+security = "all"
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+
+{variable tab="Header" type="text" name="longtitle" label="Long Title"}{/variable}
+{variable tab="Header" type="text" name="tagline" label="Tagline"}{/variable}
+{variable tab="Header" type="mediafinder" mode="image" name="banner" label="Banner image"}{/variable}
+{variable tab="Header" type="mediafinder" mode="image" name="imgcontent" label="Image Content"}{/variable}
+
+{% partial 'common/preloader' %}
+<header>
+    {% partial 'common/header-area' %}
+</header>
+
+<section>
+    {% partial 'common/header-page'  page="static" %}
+</section>
+
+
+<section>
+    <div class="about-detail-container">
+        <div class="about-detail-row">
+            {% partial 'common/banner' %}
+        </div>
+        <div class="about-detail-row padding-75">
+            {% page %}
+        </div>
+    </div>
+</section>
+
+<section>
+    {% placeholder services title="Services" %}
+</section>
+
+<section>
+    <div class="about-detail-container">
+        <div class="padding-75">
+            <div class="about-detail-row">
+                <div class="about-detail-text">
+                    {% placeholder secondContent title="Second Content" %}
+                </div>
+                <div class="about-detail-image">
+                    <div class="image-part"> <img class="img-fluid" src="{{ imgcontent|media }}" alt=""> </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        {% placeholder team title="Team" %}
+    </div>
+</section>
+
+<section>
+    {% placeholder testimonials title="Testimonials" %}
+</section>
+
+{% partial 'common/body-class-script' %}
+
+<footer class="footer">
+    {% partial 'common/footer' %}
+</footer>
+
+<div id="copyright">
+
+
+</div>
+
+{% partial 'common/scripts' %}
+
+</body>
+</html>

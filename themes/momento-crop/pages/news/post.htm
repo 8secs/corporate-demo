@@ -1,0 +1,59 @@
+title = "Post"
+url = "/news/post/:slug"
+layout = "default"
+is_hidden = 0
+
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+
+[blogTags]
+results = 5
+direction = "desc"
+
+[forumEmbedTopic]
+embedCode = "{{ :slug }}"
+channelSlug = "blog-comments"
+memberPage = "news/categories"
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->post->title;
+}
+?>
+==
+{% set post = blogPost.post %}
+
+
+<div class="news-container">
+    <div class="padding-75">
+        <div class="news-row">
+            {% partial 'common/header-page' page="news" %}
+        </div>
+        <div class="news-row padding-b">
+            <div class="news-content">
+                {% partial 'news/post' %}
+                <hr>
+                {% partial 'common/social' %}
+            </div>
+            <div class="news-sidebar">
+                {% partial 'news/sidebar' %}
+            </div>
+        </div>
+        <div class="news-row">
+            <div class="news-full-width">
+
+                {% partial 'news/embed-topic' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% partial 'common/body-class-script' %}

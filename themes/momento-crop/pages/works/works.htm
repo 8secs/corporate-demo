@@ -1,0 +1,28 @@
+title = "Works"
+url = "/works"
+layout = "default"
+description = "Lists of works"
+is_hidden = 0
+
+
+[Projects]
+pageNumber = "{{ :page }}"
+projectsPerPage = 10
+noProjectsMessage = "No projects found"
+sortOrder = "published_at desc"
+projectCategoryPage = "works/project-categories"
+projectPage = "works/work"
+
+[ProjectCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+projectCategoryPage = "works/project-categories"
+==
+<div class="padding-b">
+{% partial 'common/header-page' page='works' %}
+
+{% partial 'snippet/portfolio' class=" four-col-work work-no-spacing" %}
+</div>
+
+
+{% partial 'common/body-class-script' %}

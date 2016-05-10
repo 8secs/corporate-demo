@@ -1,0 +1,12 @@
+description = "About Us Content. You can modify this content from Content area, About Folder."
+
+[viewBag]
+snippetCode = "about-widget"
+snippetName = "About Info"
+==
+<div class="about-detail">
+    <div class="about-title">{% content 'about/detail-title' %}</div>
+</div>
+<div class="about-detail">
+    {% content 'about/detail-content' %}
+</div>

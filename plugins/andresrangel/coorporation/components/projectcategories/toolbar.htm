@@ -1,7 +1,7 @@
 <div class="portfolio-row">
     <div class="portfolio-filter text-center">
         <ul class="filter">
-            <li><a data-filter="*">All</a></li>
+            <li><a class="active first" href="#filter" data-filter="*">All</a></li>
             {% set categories = __SELF__.projectCategories %}
             {% for params in categories %}
             {% if params.projects.count > 0 %}
@@ -11,3 +11,17 @@
         </ul>
     </div>
 </div>
+
+{% put scripts %}
+<script type="text/javascript">
+    /**
+     * Este script utiliza la
+     */
+    $(document).ready(function(){
+        $('.filter a').click( function(e){
+            $('a.active').removeClass('active');
+            classie.add(e.target, 'active');
+        });
+    });
+</script>
+{% endput %}

@@ -1,0 +1,43 @@
+description = "Default layout"
+
+[staticPage]
+
+[staticMenu mainMenu]
+code = "main-menu"
+
+[staticBreadcrumbs]
+
+[session]
+security = "all"
+
+[googleTracker]
+
+
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+
+{% partial 'common/preloader' %}
+<header>
+    {% partial 'common/header-area' %}
+</header>
+
+<section>
+    {% page %}
+</section>
+
+<footer class="footer">
+    {% partial 'common/footer' %}
+</footer>
+
+<div id="copyright"></div>
+
+</div>
+{% partial 'common/scripts' %}
+
+</body>
+</html>

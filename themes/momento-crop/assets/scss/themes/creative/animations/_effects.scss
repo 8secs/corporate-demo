@@ -1,0 +1,66 @@
+/* Animations */
+
+/* Initial animation of header elements */
+.loading .ip-loader {
+  opacity: 1;
+  animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
+}
+
+.loading .ip-loader {
+  animation-delay: 0.2s;
+}
+
+@keyframes animInitialHeader {
+  from { opacity: 0; transform: translate3d(0,800px,0); }
+}
+
+/* Header elements when loading finishes */
+.loaded .ip-loader {
+  opacity: 1;
+}
+
+.loaded .ip-loader {
+  animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+
+@keyframes animLoadedLoader {
+  to { opacity: 0; transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
+}
+
+/* Header animation when loading finishes */
+.loaded .ip-header {
+  animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+
+@keyframes animLoadedHeader {
+  to { transform: translate3d(0,-100%,0); }
+}
+
+/* Content animations */
+.loaded .ip-main h2,
+.loaded .ip-main .browser,
+.loaded .ip-main .browser .box,
+.loaded .codrops-demos {
+  animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
+}
+
+.loaded .ip-main .browser,
+.loaded .ip-main .browser .box:first-child {
+  animation-delay: 0.1s;
+}
+
+.loaded .ip-main .browser .box:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loaded .ip-main .browser .box:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+
+
+@keyframes animLoadedContent {
+  from { opacity: 0; transform: translate3d(0,200px,0); }
+}

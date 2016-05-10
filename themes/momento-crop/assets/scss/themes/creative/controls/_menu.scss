@@ -1,0 +1,123 @@
+.menu-wrapper {
+  header {
+    height: 75px;
+    margin-top: 60px;
+    .logo {
+      float: left;
+      line-height: 75px;
+      img {
+        max-width: 95%;
+      }
+    }
+    .mobile-menu {
+      width: 32px;
+      height: 25px;
+      position: absolute;
+      cursor: pointer;
+      right: 20px;
+      top: 22px;
+      display: none;
+      .line {
+        height: 2px;
+        width: 30px;
+        display: inline-block;
+        position: relative;
+        background-color: #3b3b3b;
+        transition: .2s all;
+        &:before {
+          transition: .2s all;
+        }
+        &:after {
+          transition: .2s all;
+        }
+      }
+      &.open {
+        .line {
+          background-color: transparent;
+          &:before {
+            transform: translateY(7px) rotateZ(-45deg);
+          }
+          &:after {
+            transform: translateY(-7px) rotateZ(45deg);
+          }
+        }
+      }
+    }
+    nav {
+      float: right;
+      line-height: 75px;
+      ul {
+        li {
+          display: inline-block;
+          margin-left: 25px;
+          position: relative;
+          &:first-child {
+            margin-left: 0;
+          }
+          &:hover {
+            ul {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          a {
+            color: #848484;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            text-decoration: none;
+            padding-bottom: 2px;
+            transition: .2s all;
+          }
+          ul {
+            position: absolute;
+            top: 100%;
+            min-width: 180px;
+            background-color: #3b3b3b;
+            line-height: 25px;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            li {
+              margin: 0;
+              display: block;
+              position: relative;
+              a{
+                display: block;
+                font-size: 11px;
+                font-weight: 400;
+                padding: 15px 20px;
+                line-height: 15px;
+                color: #C0BDBF;
+                &:hover {
+                  text-indent: 10px;
+                  background-color: #2d2d2d;
+                }
+              }
+              ul {
+                position: absolute;
+                left: 100%;
+                top: 0;
+                opacity: 0!important;
+                visibility: hidden!important;
+                border-left: 1px solid #4C4C4C;
+                li {
+                  &:hover {
+                    ul {
+                      opacity: 1!important;
+                      visibility: visible!important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nav > ul > li > a{
+      border-bottom: 2px solid #848484;
+    }
+  }
+}

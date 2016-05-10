@@ -1,0 +1,44 @@
+title = "News"
+url = "/news/"
+layout = "default"
+description = "News List"
+is_hidden = 0
+
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "news/categories"
+postPage = "news/post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "news/categories"
+
+[blogTags]
+results = 5
+direction = "desc"
+==
+
+{% set posts = blogPosts.posts %}
+
+<div class="news-container">
+    <div class="padding-75">
+        <div class="news-row">
+            {% partial 'common/header-page' page="news" %}
+        </div>
+        <div class="news-row">
+            <div class="news-content">
+                {% partial 'news/posts' posts=posts %}
+            </div>
+            <div class="news-sidebar">
+                {% partial 'news/sidebar' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% partial 'common/body-class-script' %}

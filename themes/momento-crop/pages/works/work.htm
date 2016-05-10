@@ -1,0 +1,59 @@
+title = "work"
+url = "/works/work/:slug"
+layout = "default"
+description = "Work Detail Page"
+is_hidden = 0
+
+
+[Projects]
+pageNumber = "{{ :page }}"
+projectsPerPage = 10
+noProjectsMessage = "No projects found"
+sortOrder = "published_at desc"
+projectCategoryPage = "works/project-categories"
+projectPage = "works/work"
+
+[Project]
+maxItems = 20
+slug = "{{ :slug }}"
+projectCategoryPage = "works/project-categories"
+orderBy = "id"
+sort = "desc"
+==
+<div class="padding-b">
+    {% partial 'common/header-page' page='work' %}
+
+    <section>
+        {% partial 'Project::carousel' %}
+    </section>
+
+    <section class="portfolio padding-45">
+        <div class="portfolio-row">
+            <div class="portfolio-content">
+                {% component 'Project' %}
+                <hr>
+                {% partial 'common/social' %}
+            </div>
+            <div class="portfolio-sidebar">
+                {% partial 'Project::sidebar' %}
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio padding-45">
+        <div class="portfolio-row">
+            <div class="portfolio-title">
+                <div class="heading">
+                    <h3>{{ 'Related projects'|_ }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-row">
+            {% partial 'Project::related' %}
+        </div>
+    </section>
+
+</div>
+
+{% partial 'common/body-class-script' %}

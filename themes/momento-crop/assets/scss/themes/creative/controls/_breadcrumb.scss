@@ -1,0 +1,31 @@
+
+ol.breadcrumb {
+  padding: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: transparent;
+  border-radius: 0;
+
+  a {
+    &:hover {
+      text-decoration: none;
+      color: $brand-primary;
+    }
+    &:after {
+      content: "/";
+      padding-left: 10px;
+      text-decoration: none;
+    }
+  }
+
+  li{
+    list-style-type: none;
+    display: inline-block;
+  }
+
+  .active {
+    color: $brand-primary;
+    margin: 0 10px;
+  }
+
+}
